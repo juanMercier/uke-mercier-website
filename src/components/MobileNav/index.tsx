@@ -29,7 +29,7 @@ const MobileNav = () => {
     const pathname = usePathname();
     return (
         <Sheet>
-            <SheetTrigger className="flex justify-center items-center">
+            <SheetTrigger className="flex justify-center items-center border-secondary-foreground border-2 rounded">
                 <Menu />
             </SheetTrigger>
             <SheetContent className="flex flex-col">

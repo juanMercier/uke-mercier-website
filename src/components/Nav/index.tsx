@@ -26,8 +26,10 @@ const links = [
 const Nav = () => {
 
     const pathname = usePathname();
+
+
     return (
-        < div className='flex justify-end gap-5' >
+        < div className='flex justify-end gap-10 mx-8' >
             {
                 links.map((item, index) => {
                     return (
