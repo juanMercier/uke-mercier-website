@@ -19,13 +19,13 @@ export default function Sobre() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-6 md:mb-0">
-            <Image
-              src="/PerfilPhoto.jpg"
-              alt="Carlos Mercier"
-              width={600}
-              height={600}
-              className="rounded-full w-full h-auto"
-            />
+          <Image
+                src="/perfilInParque.jpg"
+                alt="Carlos Mercier teaching"
+                width={200}
+                height={200}
+                className="rounded-xl w-full h-auto"
+              />
           </div>
           <div className="md:w-1/2 md:pl-8 lg:pl-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Conhece o professor: Carlos Mercier</h2>
@@ -69,7 +69,7 @@ export default function Sobre() {
         <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
           Whether you're a complete beginner or looking to improve your skills, we have the perfect class for you. Start your ukulele journey with UkeMercier and discover the joy of making music.
         </p>
-        <a href="/contact" className="bg-white text-tertiary hover:bg-gray-100 font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full inline-flex items-center transition-colors text-sm sm:text-base">
+        <a href="/contactos" className="bg-white text-tertiary hover:bg-gray-100 font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full inline-flex items-center transition-colors text-sm sm:text-base">
           Get Started Now
         </a>
       </div>
