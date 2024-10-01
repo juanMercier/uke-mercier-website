@@ -53,7 +53,7 @@ export default function HistoriaDoUkulele() {
                 height={400}
                 className="rounded-lg shadow-md"
               />
-              <p className="text-sm text-gray-600 mt-2 text-center">Braguinha, Machete e Rajão - ancestrais do Ukulele</p>
+              <p className="text-sm text-gray-600 mt-2 text-center">Braguinha, Rajão e Machete - ancestrais do Ukulele</p>
             </div>
 
             <h2 className="text-2xl font-bold mb-4">{ukuleleHistory.meaning.title}</h2>
