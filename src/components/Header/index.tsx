@@ -23,8 +23,9 @@ const Header = () => {
     <header className="fixed w-full z-20 bg-white bg-opacity-90 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <nav className="flex justify-between items-center py-4">
-          <Link href="/" className="flex flex-col lg:flex-row lg:gap-x-2 item-start lg:items-end font-bold text-accent ">
-            <span className='text-4xl'>UkeMercier,</span>
+          <Link href="/" className="flex flex-col lg:flex-row lg:gap-x-1 item-start lg:items-end font-bold text-accent ">
+            <span className='text-4xl'>UkeMercier</span>
+            <span className='hidden lg:flex text-4xl'>-</span>
             <span className='text-2xl'>Escola de Ukulele</span>
           </Link>
           <div className="md:hidden">
@@ -48,7 +49,7 @@ const Header = () => {
                 <li><Link onClick={closeMenu} href="/sobre/ukemercier" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">A UkeMercier</Link></li>
                 <li><Link onClick={closeMenu} href="/sobre/historia-do-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">História do Ukulele</Link></li>
                 <li><Link onClick={closeMenu} href="/sobre/vantagens" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vantagens de Tocar</Link></li>
-                <li><Link onClick={closeMenu} href="/sobre/blog" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Blog</Link></li>
+                <li><Link onClick={closeMenu} href="/blog" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Blog</Link></li>
               </ul>
             </li>
             <li className="relative">
