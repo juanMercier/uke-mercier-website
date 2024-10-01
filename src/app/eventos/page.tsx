@@ -1,20 +1,11 @@
 import UpcomingEvents from '@/components/UpcomingEvents'
+import UpperSection from '@/components/UpperSection'
 import Image from 'next/image'
 
 export default function Events() {
   return (
-    <>
-      <section className="relative h-64 sm:h-80 md:h-96 flex items-center justify-center">
-        <Image
-          src="/groupPhotoPark.jpg"
-          alt="UkeMercier events"
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
-        <h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">Events</h1>
-      </section>
+    <div className='pt-24 md:pt-0'>
+      <UpperSection imgLocation='/groupPhotoPark.jpg' title='Eventos' />
 
       <UpcomingEvents />
 
@@ -43,6 +34,6 @@ export default function Events() {
           </a>
         </div>
       </section>
-    </>
+    </div>
   )
 }

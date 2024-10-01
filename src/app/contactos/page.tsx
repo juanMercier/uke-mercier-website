@@ -3,24 +3,14 @@
 import Image from 'next/image'
 import { Mail, Phone, Facebook } from 'lucide-react'
 import { FaFacebook } from 'react-icons/fa';
+import UpperSection from '@/components/UpperSection';
 
 export default function Contactos() {
   return (
-    <>
-      <section className="relative h-64 sm:h-80 md:h-96 flex items-center justify-center">
-        <Image
-          src="/lisboaLandscape.jpg"
-          alt="Contact UkeMercier"
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
-        <h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">Contactos</h1>
-      </section>
+    <div className='pt-24 md:pt-0'>
+      <UpperSection imgLocation='/lisboaLandscape.jpg' title='Contactos' />
 
-
-      <section className="py-12 sm:py-16 md:py-16">
+      <section className="py-12 sm:py-16 md:py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
             <div className="text-center">
@@ -32,7 +22,7 @@ export default function Contactos() {
               >
                 <Mail className="w-24 h-24 text-white hover:text-secondary" />
               </a>
-              <p className="text-secondary font-bold text-xl">carlosjmercier@gmail.com</p>
+              <p className="text-secondary font-bold text-xl">ukeinparque@gmail.com</p>
             </div>
             <div className="text-center">
               <a
@@ -92,7 +82,7 @@ export default function Contactos() {
 
         </div>
       </section>
-    </>
+    </div>
   )
 }
 

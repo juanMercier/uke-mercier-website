@@ -47,7 +47,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">Bem-vindo a UkeMercier</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <Link href='/sobre' className="bg-white p-6 sm:p-8 rounded-lg shadow-md text-center">
+            <Link href='/sobre/ukemercier' className="bg-white p-6 sm:p-8 rounded-lg shadow-md text-center">
               <Music className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary hover:text-tertiary-hover mx-auto mb-4" />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">Aulas Especializadas</h3>
               <p className="text-secondary text-sm sm:text-base">Aprende com o experiente professor Carlos Mercier e descubra a alegria de tocar ukulele.</p>
@@ -81,7 +81,7 @@ export default function Home() {
             <div className="md:w-1/2 md:pl-8 lg:pl-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Conhece o professor: Carlos Mercier</h2>
               <p className="text-secondary mb-4 sm:mb-6 text-sm sm:text-base">Carlos Mercier é um apaixonado professor de ukulele com mais de 10 anos de experiência. O seu estilo de ensino único concentra-se em tornar a aprendizem divertida, acessível e livre de stress para alunos de todos os níveis e idades.</p>
-              <Link href="/sobre" className="text-tertiary hover:text-tertiary-hover font-bold inline-flex items-center text-sm sm:text-base">
+              <Link href="/sobre/ukemercier" className="text-tertiary hover:text-tertiary-hover font-bold inline-flex items-center text-sm sm:text-base">
                 Saiba mais <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
             </div>

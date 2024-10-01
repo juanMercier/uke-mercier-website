@@ -1,21 +1,11 @@
-import Image from 'next/image'
 import { Book, Music, Video } from 'lucide-react'
 import LatestBlogPosts from '@/components/LatestBlogPosts'
+import UpperSection from '@/components/UpperSection'
 
 export default function Recursos() {
   return (
-    <>
-      <section className="relative h-64 sm:h-80 md:h-96 flex items-center justify-center">
-        <Image
-          src="/placeholder.svg?height=400&width=1200"
-          alt="Ukulele resources"
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
-        <h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">Resources</h1>
-      </section>
+    <div className='pt-24 md:pt-0'>
+      <UpperSection imgLocation='/placeholder.svg?height=400&width=1200' title='Recursos' />
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
@@ -55,6 +45,6 @@ export default function Recursos() {
       </section>
 
       <LatestBlogPosts />
-    </>
+    </div>
   )
 }
