@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <section className="hidden relative h-screen sm:flex items-center justify-center">
         <Image
-          src="/UkuleleDeitado.jpg"
+          src="/ukulele/UkuleleDeitado.jpg"
           alt="Ukulele on a beautiful beach"
           layout="fill"
           objectFit="cover"
@@ -27,7 +27,7 @@ export default function Home() {
 
       <section className="relative h-screen flex sm:hidden items-center justify-center">
         <Image
-          src="/verticalUke.jpg"
+          src="/ukulele/verticalUke.jpg"
           alt="Ukulele on a beautiful beach"
           layout="fill"
           objectFit="cover"
@@ -71,7 +71,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <Image
-                src="/perfilInParque.jpg"
+                src="/perfil/perfilInParque.jpg"
                 alt="Carlos Mercier teaching"
                 width={200}
                 height={200}

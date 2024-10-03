@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image'
 import { Mail, Phone, Facebook } from 'lucide-react'
 import { FaFacebook } from 'react-icons/fa';
 import UpperSection from '@/components/UpperSection';

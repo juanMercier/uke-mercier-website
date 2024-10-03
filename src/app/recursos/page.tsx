@@ -11,7 +11,7 @@ export default function Recursos() {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">Chord Reader Tool</h2>
           <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md">
-            <p className="text-gray-600 mb-4 text-sm sm:text-base text-center">
+            <p className="text-secondary mb-4 text-sm sm:text-base text-center">
               Easily read and play chords for your favorite ukulele songs with our interactive chord reader.
             </p>
             <div className="bg-gray-100 p-4 rounded-lg h-64 flex items-center justify-center">
@@ -28,17 +28,17 @@ export default function Recursos() {
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md">
               <Book className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary mx-auto mb-4" />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-center">Ukulele Basics</h3>
-              <p className="text-gray-600 text-sm sm:text-base text-center">Learn the fundamentals of ukulele playing, including chords, strumming patterns, and basic music theory.</p>
+              <p className="text-secondary text-sm sm:text-base text-center">Learn the fundamentals of ukulele playing, including chords, strumming patterns, and basic music theory.</p>
             </div>
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md">
               <Music className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary mx-auto mb-4" />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-center">Song Tutorials</h3>
-              <p className="text-gray-600 text-sm sm:text-base text-center">Step-by-step guides to playing popular songs on the ukulele, with chord charts and strumming patterns.</p>
+              <p className="text-secondary text-sm sm:text-base text-center">Step-by-step guides to playing popular songs on the ukulele, with chord charts and strumming patterns.</p>
             </div>
             <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md">
               <Video className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary mx-auto mb-4" />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-center">Video Lessons</h3>
-              <p className="text-gray-600 text-sm sm:text-base text-center">Watch our collection of video tutorials covering various aspects of ukulele playing and technique.</p>
+              <p className="text-secondary text-sm sm:text-base text-center">Watch our collection of video tutorials covering various aspects of ukulele playing and technique.</p>
             </div>
           </div>
         </div>

@@ -49,7 +49,7 @@ const aboutContent = {
 export default function About() {
   return (
     <div className='pt-24 md:pt-0'>
-    <UpperSection title='Sobre nós' imgLocation='/classPhoto.jpg' />
+    <UpperSection title='Sobre nós' imgLocation='/group/classPhoto.jpg' />
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
@@ -61,7 +61,7 @@ export default function About() {
               <div key={index} className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                 <section.icon className="w-12 h-12 text-tertiary mb-4 mx-auto" />
                 <h3 className="text-xl font-bold mb-4 text-center">{section.title}</h3>
-                <p className="text-gray-600">{section.content}</p>
+                <p>{section.content}</p>
               </div>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function About() {
             <div className="md:w-1/3">
               <div className="relative px-10">
                 <Image
-                  src="/perfilVertical.jpg"
+                  src="/perfil/perfilVertical.jpg"
                   alt="Professor Carlos Mercier"
                   width={300}
                   height={400}

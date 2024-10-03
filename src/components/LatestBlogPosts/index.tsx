@@ -18,7 +18,7 @@ const LatestBlogPosts = (props: Props) => {
             className="rounded-lg mb-4 w-full h-auto"
           />
           <h3 className="text-xl font-bold mb-2">The Basics of Ukulele for Beginners</h3>
-          <p className="text-gray-600 mb-4 text-sm sm:text-base">Learn the essentials to get started with playing the ukulele.</p>
+          <p className="text-secondary mb-4 text-sm sm:text-base">Learn the essentials to get started with playing the ukulele.</p>
           <a href="#" className="text-tertiary hover:text-teal-600 font-bold">Read More</a>
         </div>
         <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md">
@@ -30,7 +30,7 @@ const LatestBlogPosts = (props: Props) => {
             className="rounded-lg mb-4 w-full h-auto"
           />
           <h3 className="text-xl font-bold mb-2">Top 5 Ukulele Strumming Patterns</h3>
-          <p className="text-gray-600 mb-4 text-sm sm:text-base">Master your rhythm with these must-know strumming techniques.</p>
+          <p className="text-secondary mb-4 text-sm sm:text-base">Master your rhythm with these must-know strumming techniques.</p>
           <a href="#" className="text-tertiary hover:text-teal-600 font-bold">Read More</a>
         </div>
       </div>

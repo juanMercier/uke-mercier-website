@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function Events() {
   return (
     <div className='pt-24 md:pt-0'>
-      <UpperSection imgLocation='/groupPhotoPark.jpg' title='Eventos' />
+      <UpperSection imgLocation='/group/groupPhotoPark.jpg' title='Eventos' />
 
       <UpcomingEvents />
 
@@ -13,7 +13,7 @@ export default function Events() {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">Event Calendar</h2>
           <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md">
-            <p className="text-gray-600 mb-4 text-sm sm:text-base text-center">
+            <p className="text-secondary mb-4 text-sm sm:text-base text-center">
               View our full event calendar to stay up-to-date with all UkeMercier activities and workshops.
             </p>
             <div className="bg-gray-100 p-4 rounded-lg h-64 flex items-center justify-center">

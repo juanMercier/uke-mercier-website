@@ -43,7 +43,7 @@ export default function Benefits() {
                   <benefit.icon className="w-8 h-8 text-tertiary mr-3" />
                   <h3 className="text-xl font-bold">{benefit.title}</h3>
                 </div>
-                <p className="text-gray-600">{benefit.description}</p>
+                <p className="text-secondary">{benefit.description}</p>
               </div>
             ))}
           </div>

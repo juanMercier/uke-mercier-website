@@ -38,7 +38,7 @@ const ukuleleHistory = {
 export default function HistoriaDoUkulele() {
   return (
     <div className='pt-24 md:pt-0'>
-    <UpperSection title={ukuleleHistory.title} imgLocation='/ukulele3.webp' />
+    <UpperSection title={ukuleleHistory.title} imgLocation='/ukulele/ukulele3.webp' />
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container flex flex-col items-center mx-auto px-4">
@@ -47,13 +47,13 @@ export default function HistoriaDoUkulele() {
 
             <div className="px-8 mb-8">
               <Image
-                src="/ancientUkes.png"
+                src="/historia/ancientUkes.png"
                 alt="Traditional Portuguese instruments"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-md"
               />
-              <p className="text-sm text-gray-600 mt-2 text-center">Braguinha, Rajão e Machete - ancestrais do Ukulele</p>
+              <p className="text-sm text-secondary mt-2 text-center">Braguinha, Rajão e Machete - ancestrais do Ukulele</p>
             </div>
 
             <h2 className="text-2xl font-bold mb-4">{ukuleleHistory.meaning.title}</h2>
@@ -68,13 +68,13 @@ export default function HistoriaDoUkulele() {
 
             <div className="px-8 mb-8">
               <Image
-                src="/ancientHawaiiPlayers.jpg"
+                src="/historia/ancientHawaiiPlayers.jpg"
                 alt="Early ukulele players in Hawaii"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-md"
               />
-              <p className="text-sm text-gray-600 mt-2 text-center">Primeiros tocadores de Ukulele no Havaí</p>
+              <p className="text-sm text-secondary mt-2 text-center">Primeiros tocadores de Ukulele no Havaí</p>
             </div>
 
             <h2 className="text-2xl font-bold mb-4">{ukuleleHistory.development.title}</h2>

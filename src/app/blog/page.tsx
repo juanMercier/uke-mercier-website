@@ -6,7 +6,7 @@ import UpperSection from '@/components/UpperSection'
 export default function Blog() {
     return (
         <div className='pt-24 md:pt-0'>
-            <UpperSection title='Blog UkeMercier' imgLocation='/classPhoto.jpg' />
+            <UpperSection title='Blog UkeMercier' imgLocation='/group/classPhoto.jpg' />
 
             <section className="py-12 sm:py-16 md:py-20">
                 <div className="container mx-auto px-4">
@@ -14,7 +14,7 @@ export default function Blog() {
                         {blogPosts.map((post) => (
                             <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
                                 <Image
-                                    src="/placeholder.svg?height=200&width=400"
+                                    src={post.image}
                                     alt={post.title}
                                     width={400}
                                     height={200}
@@ -22,7 +22,7 @@ export default function Blog() {
                                 />
                                 <div className="flex flex-col justify-between p-6 ">
                                     <h2 className="text-xl font-bold mb-2 text-gray-800">{post.title}</h2>
-                                    <p className="text-gray-600 mb-4">{post.resume}</p>
+                                    <p className="text-secondary mb-4">{post.resume}</p>
                                     <div className="flex justify-between items-center">
                                         <span className="text-sm text-gray-500">{new Date(post.date).toLocaleDateString('pt-PT')}</span>
                                         <Link href={`/blog/${post.id}`} className="text-accent hover:text-accent-dark font-semibold">

@@ -80,6 +80,8 @@ const Header = () => {
                 )}
                 <li><Link onClick={closeMenu} href="/recursos/historia-do-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">História do Ukulele</Link></li>
                 <li><Link onClick={closeMenu} href="/recursos/vantagens" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vantagens de Tocar</Link></li>
+                <li><Link onClick={closeMenu} href="/recursos/tipos-de-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Tipos de Ukulele</Link></li>
+                <li><Link onClick={closeMenu} href="/recursos/afinacao" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Afinação</Link></li>
                 <li><Link onClick={closeMenu} href="/recursos/cifra-reader" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Cifra Reader</Link></li>
                 <li><Link onClick={closeMenu} href="/recursos/videos" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vídeos</Link></li>
               </ul>
