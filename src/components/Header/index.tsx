@@ -1,21 +1,46 @@
+import React, { useState, useRef, useEffect } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
-import React, { useState } from 'react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownTimeoutRef = useRef<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIfMobile = () => setIsMobile(window.innerWidth < 768)
+    checkIfMobile()
+    window.addEventListener('resize', checkIfMobile)
+    return () => window.removeEventListener('resize', checkIfMobile)
+  }, [])
 
   const closeMenu = () => {
     setIsMenuOpen(false)
-    setOpenDropdown(null)
+    setIsDropdownOpen(false)
   }
 
-  const toggleDropdown = (dropdown: string) => {
-    if (openDropdown === dropdown) {
-      setOpenDropdown(null)
-    } else {
-      setOpenDropdown(dropdown)
+  const handleMouseEnter = () => {
+    if (!isMobile) {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current)
+      }
+      setIsDropdownOpen(true)
+    }
+  }
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      dropdownTimeoutRef.current = window.setTimeout(() => {
+        setIsDropdownOpen(false)
+      }, 200)
+    }
+  }
+
+  const toggleDropdown = (e: React.MouseEvent) => {
+    if (isMobile) {
+      e.preventDefault()
+      setIsDropdownOpen(!isDropdownOpen)
     }
   }
 
@@ -23,9 +48,9 @@ const Header = () => {
     <header className="fixed w-full z-20 bg-white bg-opacity-90 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <nav className="flex justify-between items-center py-4">
-          <Link href="/" className="flex flex-col lg:flex-row lg:gap-x-1 item-start lg:items-end font-bold text-accent ">
+          <Link href="/" className="flex flex-col lg:flex-row lg:gap-x-1 item-start lg:items-end font-bold text-accent">
             <span className='text-4xl'>UkeMercier</span>
-            <span className='hidden lg:flex text-4xl'>-</span>
+            <span className='hidden lg:flex text-3xl'>-</span>
             <span className='text-2xl'>Escola de Ukulele</span>
           </Link>
           <div className="md:hidden">
@@ -35,38 +60,33 @@ const Header = () => {
           </div>
           <ul className={`md:flex space-y-4 md:space-y-0 md:space-x-8 ${isMenuOpen ? 'absolute top-16 left-0 right-0 bg-white p-4 shadow-md' : 'hidden'} md:relative md:top-0 md:bg-transparent md:p-0 md:shadow-none`}>
             <li><Link onClick={closeMenu} href="/" className="hover:text-accent text-lg capitalize transition-colors">Home</Link></li>
-            <li className="relative">
-              <button
-                onClick={() => toggleDropdown('sobre')}
+            <li><Link onClick={closeMenu} href="/sobre" className="hover:text-accent text-lg capitalize transition-colors">Sobre</Link></li>
+            <li className="relative group" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <Link
+                href="/recursos"
+                onClick={toggleDropdown}
                 className="flex items-center hover:text-accent text-lg capitalize transition-colors"
-                aria-expanded={openDropdown === 'sobre'}
+                aria-expanded={isDropdownOpen}
                 aria-haspopup="true"
               >
-                Sobre
-                <ChevronDown size={20} className={`ml-1 transform transition-transform ${openDropdown === 'sobre' ? 'rotate-180' : ''}`} />
-              </button>
-              <ul className={`${openDropdown === 'sobre' ? 'block' : 'hidden'} md:absolute md:left-0 md:mt-2 md:w-48 md:bg-white md:shadow-lg md:rounded-md md:py-2 space-y-2 md:space-y-0`}>
-                <li><Link onClick={closeMenu} href="/sobre/ukemercier" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">A UkeMercier</Link></li>
-                <li><Link onClick={closeMenu} href="/sobre/historia-do-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">História do Ukulele</Link></li>
-                <li><Link onClick={closeMenu} href="/sobre/vantagens" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vantagens de Tocar</Link></li>
-                <li><Link onClick={closeMenu} href="/blog" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Blog</Link></li>
-              </ul>
-            </li>
-            <li className="relative">
-              <button
-                onClick={() => toggleDropdown('ferramentas')}
-                className="flex items-center hover:text-accent text-lg capitalize transition-colors"
-                aria-expanded={openDropdown === 'ferramentas'}
-                aria-haspopup="true"
+                Recursos
+                <ChevronDown size={20} className={`ml-1 transform transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+              </Link>
+              <ul
+                className={`${isDropdownOpen ? 'block' : 'hidden'} md:absolute md:left-0 md:mt-2 md:w-48 md:bg-white md:shadow-lg md:rounded-md md:py-2 space-y-2 md:space-y-0`}
               >
-                ferramentas
-                <ChevronDown size={20} className={`ml-1 transform transition-transform ${openDropdown === 'ferramentas' ? 'rotate-180' : ''}`} />
-              </button>
-              <ul className={`${openDropdown === 'ferramentas' ? 'block' : 'hidden'} md:absolute md:left-0 md:mt-2 md:w-48 md:bg-white md:shadow-lg md:rounded-md md:py-2 space-y-2 md:space-y-0`}>
-                <li><Link onClick={closeMenu} href="/ferramentas/licoes" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Lições</Link></li>
-                <li><Link onClick={closeMenu} href="/ferramentas/cifra-reader" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Cifra Reader</Link></li>
+                {isMobile && (
+                <li><Link onClick={closeMenu} href="/recursos" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Todos os Recursos</Link></li>
+                )}
+                <li><Link onClick={closeMenu} href="/recursos/historia-do-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">História do Ukulele</Link></li>
+                <li><Link onClick={closeMenu} href="/recursos/vantagens" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vantagens de Tocar</Link></li>
+                <li><Link onClick={closeMenu} href="/recursos/tipos-de-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Tipos de Ukulele</Link></li>
+                <li><Link onClick={closeMenu} href="/recursos/afinacao" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Afinação</Link></li>
+                <li><Link onClick={closeMenu} href="/recursos/cifra-reader" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Cifra Reader</Link></li>
+                <li><Link onClick={closeMenu} href="/recursos/videos" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vídeos</Link></li>
               </ul>
             </li>
+            <li><Link onClick={closeMenu} href="/blog" className="hover:text-accent text-lg capitalize transition-colors">Blog</Link></li>
             <li><Link onClick={closeMenu} href="/eventos" className="hover:text-accent text-lg capitalize transition-colors">Eventos</Link></li>
             <li><Link onClick={closeMenu} href="/contactos" className={`text-lg ${isMenuOpen ? "hover:text-accent" : "bg-accent p-3 rounded-full text-white hover:bg-accent-hover"} capitalize transition-colors`}>Contactos</Link></li>
           </ul>
