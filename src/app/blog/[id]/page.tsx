@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import blogPosts from '@/data/blogPosts.json'
+import Link from 'next/link';
+import { ArrowLeftIcon } from 'lucide-react';
 
 type Props = {
   params: { id: string }
@@ -22,7 +24,8 @@ export default function BlogPost({ params }: Props) {
   }
 
   return (
-    <>
+    <div className='pt-24 md:pt-0'>
+
       <article className="max-w-3xl mx-auto px-4 py-12 sm:py-16 md:py-20">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">{post.title}</h1>
         <div className="flex items-center text-gray-600 mb-8">
@@ -38,6 +41,6 @@ export default function BlogPost({ params }: Props) {
         />
         <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
       </article>
-    </>
+    </div>
   )
 }

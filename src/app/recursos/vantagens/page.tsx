@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Brain, Music, Focus, HandMetal, Smile, Users, Lightbulb, Award, Book, Heart, Clock } from 'lucide-react'
 
 const benefits = [
-  { title: "Melhora da Memória", description: "Tocar ukulele estimula o cérebro e pode aumentar a capacidade de memória. Estudos demonstram que tanto ouvir música como tocar um instrumento ajudam a fortalecer a memória de longo prazo.", icon: Brain },
+  { title: "Melhoria da Memória", description: "Tocar ukulele estimula o cérebro e pode aumentar a capacidade de memória. Estudos demonstram que tanto ouvir música como tocar um instrumento ajudam a fortalecer a memória de longo prazo.", icon: Brain },
   { title: "Desenvolvimento Cognitivo", description: "A prática musical envolve várias áreas do cérebro, como as habilidades motoras, a capacidade auditiva e a memória. Tocar ukulele contribui para um aumento da atividade cerebral, promovendo o desenvolvimento cognitivo.", icon: Music },
   { title: "Concentração e Foco", description: "Aprender a tocar ukulele exige atenção e foco, competências que podem ser aplicadas noutras áreas da vida, como os estudos e o trabalho. A prática regular ajuda a melhorar a capacidade de concentração.", icon: Focus },
   { title: "Coordenação Motora", description: "Tocar ukulele envolve o uso de ambas as mãos, melhorando a coordenação motora e a destreza manual. Isto é especialmente útil em atividades que requerem precisão e controlo.", icon: HandMetal },
