@@ -43,7 +43,7 @@ export default function TiposDeUkuleles() {
                                     className="w-full h-64 object-cover"
                                 />
                                 <div className="p-6">
-                                    <h2 className="text-2xl font-bold mb-4 text-accent">{ukulele.type}</h2>
+                                    <h2 className="text-2xl font-bold mb-4 text-tertiary">{ukulele.type}</h2>
                                     <p className="text-secondary">{ukulele.description}</p>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@ export default function TiposDeUkuleles() {
                 </div>
             </section>
 
-            <section className="py-12 sm:py-16 md:py-20 bg-gray-100">
+            <section className="py-12 sm:py-16 md:py-20 bg-tertiary text-white">
                 <div className="container mx-auto px-4">
                     <p className="text-lg text-center max-w-3xl mx-auto">
                         Cada um deles tem o seu timbre característico, no entanto este não depende apenas do tamanho mas também das madeiras utilizadas na sua construção assim como do tipo de cordas.
