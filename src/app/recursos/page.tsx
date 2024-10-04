@@ -20,7 +20,7 @@ const resources = [
     title: "Tipos de Ukuleles",
     description: "Conheça os diferentes tipos de ukuleles: soprano, concerto, tenor e barítono.",
     icon: Music,
-    link: "/recursos/tipos-de-ukuleles"
+    link: "/recursos/tipos-de-ukulele"
   },
   {
     title: "Afinação do Ukulele",

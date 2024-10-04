@@ -46,7 +46,7 @@ export default function BlogPost({ params }: Props) {
             height={400}
             className="w-full rounded-lg shadow-md mb-8"
           />
-          <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div className="text-xl mb-8 max-w-none text-justify" dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
       </div>
     </div>

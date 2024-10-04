@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Music, Book, Calendar } from 'lucide-react'
-import UpcomingEvents from '@/components/UpcomingEvents'
-import LatestBlogPosts from '@/components/LatestBlogPosts'
+import EventsList from '@/components/EventsList'
 
 export default function Home() {
   return (
@@ -89,8 +88,7 @@ export default function Home() {
         </div>
       </section>
 
-      <UpcomingEvents />
-      <LatestBlogPosts />
+      <EventsList past={false} workshop={false} />
 
       <section className="py-12 sm:py-16 md:py-20 bg-tertiary text-white">
         <div className="container mx-auto px-4 text-center">

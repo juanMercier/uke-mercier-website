@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "UkeMercier",
-  description: "UkeMercier Website",
+  title: "UkeMercier - Escola de Ukulele Lisboa",
+  description: "UkeMercier - Escola de Ukulele Lisboa",
 };
 
 export default function RootLayout({
