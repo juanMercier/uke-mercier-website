@@ -58,7 +58,7 @@ const Header = () => {
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
-          <ul className={`md:flex space-y-4 md:space-y-0 md:space-x-8 ${isMenuOpen ? 'absolute top-16 left-0 right-0 bg-white p-4 shadow-md' : 'hidden'} md:relative md:top-0 md:bg-transparent md:p-0 md:shadow-none`}>
+          <ul className={`md:flex space-y-4 md:space-y-0 md:space-x-8 ${isMenuOpen ? 'absolute top-24 left-0 right-0 bg-white p-4 shadow-md' : 'hidden'} md:relative md:top-0 md:bg-transparent md:p-0 md:shadow-none`}>
             <li><Link onClick={closeMenu} href="/" className="hover:text-accent text-lg capitalize transition-colors">Home</Link></li>
             <li><Link onClick={closeMenu} href="/sobre" className="hover:text-accent text-lg capitalize transition-colors">Sobre</Link></li>
             <li className="relative group" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

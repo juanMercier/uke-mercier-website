@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "title": "Encontro de Ukulele ao Ar Livre",
+        "date": "13-08-2024",
+        "from": "17:00",
+        "to": "20:00",
+        "location": "Parque das Conchas",
+        "description": "O 1º Encontro de Cordas do Sol é um evento",
+        "content": "",
+        "image": "/eventos/Encontro Ukulele 13 Ago.png",
+        "past": true,
+        "workshop": false
+    },
+    {
+        "id": 2,
+        "title": "Encontro de Ukulele ao Ar Livre",
+        "date": "14-04-2024",
+        "from": "16:00",
+        "to": "18:00",
+        "location": "Parque das Conchas",
+        "description": "O 1º Encontro de Cordas do Sol é um evento",
+        "content": "",
+        "image": "/eventos/Encontro Ukulele 14 Abril.png",
+        "past": true,
+        "workshop": false
+    },
+    {
+        "id": 3,
+        "title": "Encontro de Ukulele",
+        "date": "12-11-2023",
+        "from": "15:00",
+        "to": "17:00",
+        "location": "Parque das Conchas",
+        "description": "Econtro de Ukulele",
+        "content": "",
+        "image": "/eventos/Encontro de Ukulele 12 Nov.png",
+        "past": true,
+        "workshop": false
+    },
+    {
+        "id": 4,
+        "title": "1º Encontro de Cordas do Sol",
+        "date": "17-06-2023",
+        "from": "17:00",
+        "to": "20:00",
+        "location": "Parque das Conchas",
+        "description": "O 1º Encontro de Cordas do Sol é um evento",
+        "content": "",
+        "image": "/eventos/1 Encontro de Cordas Do Sol.png",
+        "past": true,
+        "workshop": false
+    },
+    {
+        "id": 5,
+        "title": "Workshop de Ukulele",
+        "date": "12-09-2023",
+        "from": "12:30",
+        "to": "14:00",
+        "location": "Clube PT",
+        "description": "O 1º Encontro de Cordas do Sol é um evento",
+        "content": "",
+        "image": "/eventos/Workshop Ukulele.png",
+        "past": true,
+        "workshop": true
+    }
+]

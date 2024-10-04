@@ -34,7 +34,7 @@ export default function Benefits() {
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
           <p className="text-xl text-center mb-12 max-w-3xl mx-auto">
-            Aprender a tocar um instrumento musical, como o ukulele, oferece uma série de benefícios cognitivos, emocionais e sociais. Descubra como o ukulele pode enriquecer a sua vida:
+            Aprender a tocar um instrumento musical, como o ukulele, oferece uma série de benefícios cognitivos, emocionais e sociais. Descubra como o ukulele pode enriquecer a sua vida
           </p>
 
               <VantagensCards />
