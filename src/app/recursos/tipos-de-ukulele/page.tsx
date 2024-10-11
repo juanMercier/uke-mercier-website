@@ -44,7 +44,7 @@ export default function TiposDeUkuleles() {
                                 />
                                 <div className="p-6">
                                     <h2 className="text-2xl font-bold mb-4 text-tertiary">{ukulele.type}</h2>
-                                    <p className="text-secondary">{ukulele.description}</p>
+                                    <p className="text-secondary text-justify">{ukulele.description}</p>
                                 </div>
                             </div>
                         ))}

@@ -23,7 +23,7 @@ const EventCard = ({
     description,
 }: EventCardProps) => {
     return (
-        <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+        <div className="bg-primary-foreground p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl">
             <h3 className="text-xl font-bold mb-4">{title}</h3>
             <div className="flex items-center mb-2">
                 <Calendar className="w-5 h-5 mr-2 text-tertiary" />

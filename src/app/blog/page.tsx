@@ -12,7 +12,7 @@ export default function Blog() {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {blogPosts.map((post) => (
-                            <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col">
+                            <article key={post.id} className="bg-primary-foreground rounded-xl shadow-md overflow-hidden hover:shadow-xl flex flex-col">
                                 <Image
                                     src={post.image}
                                     alt={post.title}

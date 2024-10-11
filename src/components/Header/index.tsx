@@ -61,6 +61,7 @@ const Header = () => {
           <ul className={`md:flex space-y-4 md:space-y-0 md:space-x-8 ${isMenuOpen ? 'absolute top-24 left-0 right-0 bg-white p-4 shadow-md' : 'hidden'} md:relative md:top-0 md:bg-transparent md:p-0 md:shadow-none`}>
             <li><Link onClick={closeMenu} href="/" className="hover:text-accent text-lg capitalize transition-colors">Home</Link></li>
             <li><Link onClick={closeMenu} href="/sobre" className="hover:text-accent text-lg capitalize transition-colors">Sobre</Link></li>
+            <li><Link onClick={closeMenu} href="/aulas" className="hover:text-accent text-lg capitalize transition-colors">Aulas</Link></li>
             <li className="relative group" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
                 href="/recursos"
@@ -82,7 +83,7 @@ const Header = () => {
                 <li><Link onClick={closeMenu} href="/recursos/vantagens" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vantagens de Tocar</Link></li>
                 <li><Link onClick={closeMenu} href="/recursos/tipos-de-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Tipos de Ukulele</Link></li>
                 <li><Link onClick={closeMenu} href="/recursos/afinacao" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Afinação</Link></li>
-                <li><Link onClick={closeMenu} href="/recursos/cifra-reader" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Cifra Reader</Link></li>
+                <li><Link onClick={closeMenu} href="/recursos/leitor-de-cifras" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Leitor de Cifras</Link></li>
                 <li><Link onClick={closeMenu} href="/recursos/videos" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vídeos</Link></li>
               </ul>
             </li>

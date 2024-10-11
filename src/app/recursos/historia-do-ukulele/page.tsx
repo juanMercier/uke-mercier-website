@@ -43,7 +43,7 @@ export default function HistoriaDoUkulele() {
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container flex flex-col items-center mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <p className="mb-6 text-lg leading-relaxed">{ukuleleHistory.intro}</p>
+            <p className="mb-6 text-lg leading-relaxed text-justify">{ukuleleHistory.intro}</p>
 
             <div className="px-8 mb-8">
               <Image
@@ -58,12 +58,12 @@ export default function HistoriaDoUkulele() {
 
             <h2 className="text-2xl font-bold mb-4">{ukuleleHistory.meaning.title}</h2>
             {ukuleleHistory.meaning.content.map((paragraph, index) => (
-              <p key={index} className="mb-6 text-lg leading-relaxed">{paragraph}</p>
+              <p key={index} className="mb-6 text-lg leading-relaxed text-justify">{paragraph}</p>
             ))}
 
             <h2 className="text-2xl font-bold mb-4">{ukuleleHistory.arrival.title}</h2>
             {ukuleleHistory.arrival.content.map((paragraph, index) => (
-              <p key={index} className="mb-6 text-lg leading-relaxed">{paragraph}</p>
+              <p key={index} className="mb-6 text-lg leading-relaxed text-justify">{paragraph}</p>
             ))}
 
             <div className="px-8 mb-8">
@@ -79,12 +79,12 @@ export default function HistoriaDoUkulele() {
 
             <h2 className="text-2xl font-bold mb-4">{ukuleleHistory.development.title}</h2>
             {ukuleleHistory.development.content.map((paragraph, index) => (
-              <p key={index} className="mb-6 text-lg leading-relaxed">{paragraph}</p>
+              <p key={index} className="mb-6 text-lg leading-relaxed text-justify">{paragraph}</p>
             ))}
 
             <h2 className="text-2xl font-bold mb-4">{ukuleleHistory.popularization.title}</h2>
             {ukuleleHistory.popularization.content.map((paragraph, index) => (
-              <p key={index} className="mb-6 text-lg leading-relaxed">{paragraph}</p>
+              <p key={index} className="mb-6 text-lg leading-relaxed text-justify">{paragraph}</p>
             ))}
           </div>
         </div>

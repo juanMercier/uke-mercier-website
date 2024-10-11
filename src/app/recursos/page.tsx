@@ -29,10 +29,10 @@ const resources = [
     link: "/recursos/afinacao"
   },
   {
-    title: "Cifra Reader",
+    title: "Leitor de Cifras",
     description: "Use nossa ferramenta interativa para ler e praticar cifras de ukulele.",
     icon: FileText,
-    link: "/recursos/cifra-reader"
+    link: "/recursos/leitor-de-cifras"
   },
   {
     title: "Vídeos",
@@ -51,7 +51,7 @@ export default function Recursos() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {resources.map((resource, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div key={index} className="bg-primary-foreground rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                 <div className="p-6">
                   <resource.icon className="w-12 h-12 text-tertiary mb-4" />
                   <h2 className="text-2xl font-bold mb-4">{resource.title}</h2>
