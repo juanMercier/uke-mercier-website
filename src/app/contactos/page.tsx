@@ -51,7 +51,7 @@ export default function Contactos() {
             <div className=''>
 
             </div>
-            <div className="bg-primary-foreground p-8 rounded-lg shadow-md mb-12">
+            <div className="bg-primary-foreground p-8 rounded-xl shadow-md mb-12">
               <form className="space-y-4">
                 <input type="text" placeholder="Name" className="w-full px-4 py-2 rounded-md" />
                 <input type="email" placeholder="Email" className="w-full px-4 py-2 rounded-md" />

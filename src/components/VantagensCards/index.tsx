@@ -25,7 +25,7 @@ const VantagensCards = ({ count }: Props) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {cards.map((benefit, index) => (
-        <div key={index} className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:scale-105">
+        <div key={index} className="bg-white rounded-xl shadow-md p-6 transition-transform duration-300 hover:scale-105 hover:shadow-xl">
           <div className="flex items-center mb-4">
             <benefit.icon className="w-8 h-8 text-tertiary mr-3" />
             <h3 className="text-xl font-bold">{benefit.title}</h3>

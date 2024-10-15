@@ -9,7 +9,7 @@ export default function AfinacaoUkulele() {
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto text-justify">
             <p className="text-lg mb-6">
               A afinação mais comum do ukulele soprano no seu auge na década de 20 era em D6: (A4, D4, F#4, B4), mas hoje em dia a mais popular é em C6 (G4, C4, E4, A4). Para os tamanhos concerto e tenor a afinação mais usual também é em C6.
             </p>
@@ -27,7 +27,7 @@ export default function AfinacaoUkulele() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <Image
-              src="/recursos/image001.png"
+              src="/explorar/image001.png"
               alt="Diagrama de afinação do Ukulele"
               width={800}
               height={400}
@@ -39,7 +39,7 @@ export default function AfinacaoUkulele() {
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto text-justify">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">Caso não tenha um afinador cromático pode fazer da seguinte forma:</h2>
             <h3 className="text-xl font-bold mb-4">Afinação a partir da corda G</h3>
             <ol className="list-decimal list-inside space-y-4">

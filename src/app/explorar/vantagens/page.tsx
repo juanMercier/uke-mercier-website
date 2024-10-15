@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Brain, Music, Focus, HandMetal, Smile, Users, Lightbulb, Award, Book, Heart, Clock } from 'lucide-react'
 import VantagensCards from '@/components/VantagensCards'
+import SecondFooter from '@/components/SecondFooter'
 
 const benefits = [
   { title: "Melhoria da Memória", description: "Tocar ukulele estimula o cérebro e pode aumentar a capacidade de memória. Estudos demonstram que tanto ouvir música como tocar um instrumento ajudam a fortalecer a memória de longo prazo.", icon: Brain },
@@ -42,22 +43,8 @@ export default function Benefits() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 md:py-20 bg-tertiary text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Comece a Sua Jornada Musical</h2>
-          <p className="text-xl text-center mb-12 max-w-3xl mx-auto">
-            Estes benefícios mostram que tocar ukulele não só enriquece a vida musicalmente, como também contribui para o crescimento pessoal, emocional e cognitivo. Não espere mais para começar a sua aventura com o ukulele!
-          </p>
-          <div className="text-center">
-            <a href="/contactos" className="bg-white hover:bg-tertiary-dark text-tertiary hover:bg-tertiary-hover font-bold py-3 px-6 rounded-full inline-flex items-center transition-colors text-lg">
-              Agende Sua Primeira Aula
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
+      <SecondFooter title='Pronto para começar a tua jornada de ukulele?' link='/contactos' description='Estes benefícios mostram que tocar ukulele não só enriquece a vida musicalmente, como também contribui para o crescimento pessoal, emocional e cognitivo. Não espere mais para começar a sua aventura com o ukulele!'/>
+
     </div>
   )
 }

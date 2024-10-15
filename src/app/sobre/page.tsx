@@ -58,7 +58,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {aboutContent.school.sections.map((section, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+              <div key={index} className="bg-primary-foreground p-6 rounded-xl shadow-md hover:shadow-xl">
                 <section.icon className="w-12 h-12 text-tertiary mb-4 mx-auto" />
                 <h3 className="text-xl font-bold mb-4 text-center">{section.title}</h3>
                 <p>{section.content}</p>
@@ -66,7 +66,7 @@ export default function About() {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r bg-tertiary text-white p-8 rounded-lg mb-12 shadow-xl">
+          <div className="bg-gradient-to-r bg-tertiary text-white p-8 rounded-xl mb-12 shadow-xl">
             <h3 className="text-3xl font-bold mb-6 text-center">{aboutContent.school.cta}</h3>
             <p className="text-xl text-center mb-8">{aboutContent.school.ctaContent}</p>
             <div className="flex justify-center">
@@ -89,16 +89,16 @@ export default function About() {
                   alt="Professor Carlos Mercier"
                   width={300}
                   height={400}
-                  className="rounded-lg shadow-md"
+                  className="rounded-xl shadow-md"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-tertiary text-white py-2 px-4 rounded-b-lg">
+                <div className="absolute bottom-0 left-0 right-0 bg-tertiary text-white py-2 px-4 rounded-xl">
                   <h3 className="text-xl font-bold text-center">{aboutContent.professor.name}</h3>
                 </div>
               </div>
             </div>
             <div className="md:w-2/3">
               {aboutContent.professor.content.map((paragraph, index) => (
-                <p key={index} className="mb-4 text-gray-700 leading-relaxed text-justify">{paragraph}</p>
+                <p key={index} className="mb-4 text-md text-secondary leading-relaxed text-justify">{paragraph}</p>
               ))}
             </div>
           </div>
