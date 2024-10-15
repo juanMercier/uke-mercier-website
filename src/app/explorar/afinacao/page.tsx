@@ -27,7 +27,7 @@ export default function AfinacaoUkulele() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <Image
-              src="/recursos/image001.png"
+              src="/explorar/image001.png"
               alt="Diagrama de afinação do Ukulele"
               width={800}
               height={400}

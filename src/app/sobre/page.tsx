@@ -89,7 +89,7 @@ export default function About() {
                   alt="Professor Carlos Mercier"
                   width={300}
                   height={400}
-                  className="rounded-lg shadow-md"
+                  className="rounded-xl shadow-md"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-tertiary text-white py-2 px-4 rounded-xl">
                   <h3 className="text-xl font-bold text-center">{aboutContent.professor.name}</h3>

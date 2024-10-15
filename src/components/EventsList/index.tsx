@@ -37,6 +37,7 @@ const EventsList = ({ past , workshop}: Props) => {
                 to={event.to}
                 location={event.location}
                 description={event.description}
+                imageUrl={event.image}
               />))
           }
         </div>

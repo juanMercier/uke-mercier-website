@@ -67,14 +67,12 @@ export default function CifraReader() {
     };
   }, [selectedSong, scrollSpeed, isScrolling, wasManuallyScrolled]);
 
-  // Filtering songs as the user types
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value.toLowerCase();
     setSearchTerm(query);
 
-    // Update the filtered songs list based on the search term
     if (query === "") {
-      setFilteredSongs(songs); // Show all songs if search is empty
+      setFilteredSongs(songs);
     } else {
       const results = songs.filter((song) =>
         song.name.toLowerCase().includes(query)
@@ -115,7 +113,7 @@ export default function CifraReader() {
     <div className="pt-24 lg:pt-16">
       <div className="flex h-screen bg-gray-100">
         {/* Sidebar */}
-        <div className={`${sidebarOpen ? "w-64" : "w-0"} transition-all duration-300 bg-primary-foreground shadow-lg overflow-hidden`}>
+        <div className={`${sidebarOpen ? "w-64" : "w-0"} transition-all duration-300 bg-white shadow-lg overflow-hidden`}>
           <div className="p-4 h-full overflow-y-auto scrollbar-hide">
             <h2 className="text-xl font-bold mb-4">Biblioteca de Cifras</h2>
             <div className="relative mb-4">
@@ -151,7 +149,7 @@ export default function CifraReader() {
 
         {/* Main content */}
         <div className="flex-1 overflow-hidden bg-primary">
-          <div className="flex justify-between items-center p-4 bg-primary-foreground shadow">
+          <div className="flex justify-between items-center p-4 bg-white shadow">
             <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 rounded hover:bg-gray-100">
               <Menu size={24} />
               <span className="sr-only">Toggle sidebar</span>

@@ -1,12 +1,13 @@
 "use client";
 
+import UpperSection from '@/components/UpperSection';
 import { useState } from 'react'
 
 // This would typically come from a database or API
 const videoData = [
   {
     id: 1,
-    title: "Moon River Fingerstyle",
+    title: "Moon River Fingerstyle - Nível Avançado",
     youtubeId: "ZoDYr5dIY9s"
   },
   {
@@ -62,7 +63,7 @@ const VideoEmbed = ({ youtubeId, title }: { youtubeId: string, title: string }) 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       title={title}
-      className="w-full h-80 sm:h-[450px] rounded-lg shadow-md"
+      className="w-full h-80 sm:h-[435px] rounded-lg shadow-md"
     ></iframe>
   </div>
 )
@@ -72,10 +73,7 @@ export default function VideosPage() {
 
   return (
     <div className='pt-24 md:pt-0'>
-      <section className="relative h-64 sm:h-80 md:h-96 flex items-center justify-center bg-accent">
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
-        <h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">Vídeos de Ukulele</h1>
-      </section>
+      <UpperSection title="Vídeos de Ukulele" imgLocation='/ukulele/UkuleleDeitado.jpg'/>
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
@@ -95,8 +93,8 @@ export default function VideosPage() {
                     onClick={() => setSelectedVideo(video)}
                     className={`w-full text-left p-4 rounded-lg transition-colors ${
                       selectedVideo.id === video.id
-                        ? 'bg-accent text-white'
-                        : 'bg-gray-100 hover:bg-gray-200'
+                        ? 'bg-tertiary rounded-xl text-white'
+                        : 'bg-primary-foreground rounded-xl hover:bg-tertiary-hover'
                     }`}
                   >
                     {video.title}

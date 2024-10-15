@@ -11,7 +11,7 @@ const Footer = (props: Props) => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8">
             <Link href="/sobre" className="hover:text-accent-hover capitalize transition-colors">sobre</Link>
-            <Link href="/recursos" className="hover:text-accent-hover capitalize transition-colors">recursos</Link>
+            <Link href="/explorar" className="hover:text-accent-hover capitalize transition-colors">explorar</Link>
             <Link href="/blog" className="hover:text-accent-hover capitalize transition-colors">blog</Link>
             <Link href="/eventos" className="hover:text-accent-hover capitalize transition-colors">eventos</Link>
             <Link href="/contactos" className="hover:text-accent-hover capitalize transition-colors">contactos</Link>

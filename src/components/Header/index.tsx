@@ -45,7 +45,7 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed w-full z-20 bg-white bg-opacity-90 backdrop-blur-sm">
+    <header className="fixed w-full z-20 bg-white bg-opacity-90 backdrop-blur-sm text-secondary">
       <div className="container mx-auto px-4">
         <nav className="flex justify-between items-center py-4">
           <Link href="/" className="flex flex-col lg:flex-row lg:gap-x-1 item-start lg:items-end font-bold text-accent">
@@ -64,27 +64,27 @@ const Header = () => {
             <li><Link onClick={closeMenu} href="/aulas" className="hover:text-accent text-lg capitalize transition-colors">Aulas</Link></li>
             <li className="relative group" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link
-                href="/recursos"
+                href="/explorar"
                 onClick={toggleDropdown}
                 className="flex items-center hover:text-accent text-lg capitalize transition-colors"
                 aria-expanded={isDropdownOpen}
                 aria-haspopup="true"
               >
-                Recursos
+                Explorar
                 <ChevronDown size={20} className={`ml-1 transform transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </Link>
               <ul
-                className={`${isDropdownOpen ? 'block' : 'hidden'} md:absolute md:left-0 md:mt-2 md:w-48 md:bg-white md:shadow-lg md:rounded-md md:py-2 space-y-2 md:space-y-0`}
+                className={`${isDropdownOpen ? 'block' : 'hidden'} md:absolute md:left-0 md:mt-2 md:w-48 md:bg-white md:shadow-lg md:rounded-xl md:py-2 space-y-2 md:space-y-0`}
               >
                 {isMobile && (
-                <li><Link onClick={closeMenu} href="/recursos" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Todos os Recursos</Link></li>
+                <li><Link onClick={closeMenu} href="/explorar" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Tudo em Explorar</Link></li>
                 )}
-                <li><Link onClick={closeMenu} href="/recursos/historia-do-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">História do Ukulele</Link></li>
-                <li><Link onClick={closeMenu} href="/recursos/vantagens" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vantagens de Tocar</Link></li>
-                <li><Link onClick={closeMenu} href="/recursos/tipos-de-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Tipos de Ukulele</Link></li>
-                <li><Link onClick={closeMenu} href="/recursos/afinacao" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Afinação</Link></li>
-                <li><Link onClick={closeMenu} href="/recursos/leitor-de-cifras" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Leitor de Cifras</Link></li>
-                <li><Link onClick={closeMenu} href="/recursos/videos" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vídeos</Link></li>
+                <li><Link onClick={closeMenu} href="/explorar/historia-do-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">História do Ukulele</Link></li>
+                <li><Link onClick={closeMenu} href="/explorar/vantagens" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vantagens de Tocar</Link></li>
+                <li><Link onClick={closeMenu} href="/explorar/tipos-de-ukulele" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Tipos de Ukulele</Link></li>
+                <li><Link onClick={closeMenu} href="/explorar/afinacao" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Afinação</Link></li>
+                <li><Link onClick={closeMenu} href="/explorar/leitor-de-cifras" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Leitor de Cifras</Link></li>
+                <li><Link onClick={closeMenu} href="/explorar/videos" className="block px-4 py-2 hover:bg-accent hover:text-white transition-colors">Vídeos</Link></li>
               </ul>
             </li>
             <li><Link onClick={closeMenu} href="/blog" className="hover:text-accent text-lg capitalize transition-colors">Blog</Link></li>

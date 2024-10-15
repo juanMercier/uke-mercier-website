@@ -27,14 +27,14 @@ const ukuleleTypes = [
 export default function TiposDeUkuleles() {
     return (
         <div className='pt-24 md:pt-0'>
-            <UpperSection title='Tipos de Ukulele' imgLocation='/ukulele/ukulele3.webp' />
+            <UpperSection title='Tipos de Ukulele' imgLocation='/ukulele/tiposDeUkulele.jpg' />
 
 
             <section className="py-12 sm:py-16 md:py-20">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {ukuleleTypes.map((ukulele, index) => (
-                            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div key={index} className="bg-primary-foreground rounded-xl shadow-md overflow-hidden hover:shadow-xl">
                                 <Image
                                     src={ukulele.image}
                                     alt={`Ukulele ${ukulele.type}`}

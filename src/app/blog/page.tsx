@@ -12,7 +12,7 @@ export default function Blog() {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {blogPosts.map((post) => (
-                            <article key={post.id} className="bg-primary-foreground rounded-xl shadow-md overflow-hidden hover:shadow-xl flex flex-col">
+                            <Link href={`/blog/${post.id}`} key={post.id} className="bg-primary-foreground rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-transform duration-300 hover:scale-105 flex flex-col">
                                 <Image
                                     src={post.image}
                                     alt={post.title}
@@ -26,15 +26,14 @@ export default function Blog() {
                                         <p className="text-secondary mb-4">{post.resume}</p>
                                     </div>
 
-                                    {/* This section will stay at the bottom */}
                                     <div className="flex justify-between items-center mt-auto">
                                         <span className="text-sm text-gray-500">{new Date(post.date).toLocaleDateString('pt-PT')}</span>
-                                        <Link href={`/blog/${post.id}`} className="text-tertiary hover:text-tertiary-hover font-semibold">
+                                        {/* <Link href={`/blog/${post.id}`} className="text-tertiary hover:text-tertiary-hover font-semibold">
                                             Ler mais
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
-                            </article>
+                            </Link>
                         ))}
                     </div>
                 </div>
