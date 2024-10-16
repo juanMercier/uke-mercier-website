@@ -1,10 +1,36 @@
 "use client";
 
-import { Mail, Phone, Facebook } from 'lucide-react'
+import { Mail, Phone, Facebook, CheckCircle } from 'lucide-react'
 import { FaFacebook } from 'react-icons/fa';
 import UpperSection from '@/components/UpperSection';
+import { useForm, ValidationError } from '@formspree/react';
+import { useEffect, useState } from 'react';
 
 export default function Contactos() {
+  const [state, handleSubmit, reset] = useForm("xpwzzjlp");
+  const [isFadingOut, setIsFadingOut] = useState(false)
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    await handleSubmit(formData)
+  }
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setIsFadingOut(false);
+      const fadeOutTimer = setTimeout(() => {
+        setIsFadingOut(true);
+      }, 4500);
+
+      return () => {
+        clearTimeout(fadeOutTimer);
+      };
+    }
+  }, [state.succeeded]);
+
+
   return (
     <div className='pt-24 md:pt-0'>
       <UpperSection imgLocation='/lisboaLandscape.jpg' title='Contactos' />
@@ -48,17 +74,20 @@ export default function Contactos() {
           </div>
 
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-24'>
-            <div className=''>
-
+            <div className='mt-12'>
+              <h2 className="text-2xl font-bold mb-6">Tem alguma questão ou sugestão?</h2>
+              <p className="text-secondary text-lg">
+              Estamos aqui para ajudar! Preencha o formulário ao lado e entraremos em contacto consigo o mais breve possível. Se preferir, pode também enviar-nos um email diretamente ou ligar para o nosso número de apoio. Adoramos ouvir as suas ideias e responder a todas as suas dúvidas!
+              </p>
             </div>
             <div className="bg-primary-foreground p-8 rounded-xl shadow-md mb-12">
-              <form className="space-y-4">
-                <input type="text" placeholder="Name" className="w-full px-4 py-2 rounded-md" />
-                <input type="email" placeholder="Email" className="w-full px-4 py-2 rounded-md" />
-                <input type="text" placeholder="Subject" className="w-full px-4 py-2 rounded-md" />
-                <textarea placeholder="Message" rows={4} className="w-full px-4 py-2 rounded-md"></textarea>
-                <button type="submit" className="w-full bg-secondary text-white font-bold py-2 px-4 rounded-md hover:bg-gray-700 transition-colors">
-                  Send Message
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <input type="text" name="nome" placeholder="Nome" className="w-full px-4 py-2 rounded-md" />
+                <input type="email" name='email' placeholder="Email" className="w-full px-4 py-2 rounded-md" />
+                <input type="text" name='assunto' placeholder="Assunto" className="w-full px-4 py-2 rounded-md" />
+                <textarea name="mensagem" placeholder="Mensagem" rows={4} className="w-full px-4 py-2 rounded-md"></textarea>
+                <button type="submit" className="w-full bg-tertiary text-white font-bold py-2 px-4 rounded-xl hover:bg-tertiary-hover transition-colors" disabled={state.submitting}>
+                  Enviar Mensagem
                 </button>
               </form>
             </div>
@@ -81,6 +110,13 @@ export default function Contactos() {
 
         </div>
       </section>
+
+      {state.succeeded && (
+          <div className={`fixed bottom-4 right-4 bg-tertiary text-primary px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
+            <CheckCircle className="h-6 w-6" />
+            <span className="font-bold">Obrigado por se inscrever! Entraremos em contato em breve.</span>
+          </div>
+        )}
     </div>
   )
 }

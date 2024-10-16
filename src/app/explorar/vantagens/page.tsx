@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Brain, Music, Focus, HandMetal, Smile, Users, Lightbulb, Award, Book, Heart, Clock } from 'lucide-react'
 import VantagensCards from '@/components/VantagensCards'
 import SecondFooter from '@/components/SecondFooter'
+import UpperSection from '@/components/UpperSection'
 
 const benefits = [
   { title: "Melhoria da Memória", description: "Tocar ukulele estimula o cérebro e pode aumentar a capacidade de memória. Estudos demonstram que tanto ouvir música como tocar um instrumento ajudam a fortalecer a memória de longo prazo.", icon: Brain },
@@ -20,17 +21,7 @@ const benefits = [
 export default function Benefits() {
   return (
     <div className='pt-24 md:pt-0'>
-      <section className="relative h-64 sm:h-80 md:h-96 flex items-center justify-center">
-        <Image
-          src="/placeholder.svg?height=400&width=1200"
-          alt="Ukulele on a colorful background"
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-tertiary to-tertiary-light opacity-75" />
-        <h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">Benefícios de Tocar Ukulele</h1>
-      </section>
+      <UpperSection imgLocation='/group/groupPhotoPark.jpg' title='Vantagens de Tocar' />
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
@@ -43,7 +34,7 @@ export default function Benefits() {
         </div>
       </section>
 
-      <SecondFooter title='Pronto para começar a tua jornada de ukulele?' link='/contactos' description='Estes benefícios mostram que tocar ukulele não só enriquece a vida musicalmente, como também contribui para o crescimento pessoal, emocional e cognitivo. Não espere mais para começar a sua aventura com o ukulele!'/>
+      <SecondFooter title='Pronto para começar a tua jornada de ukulele?' link='/contactos' description='Estás preparado para explorar o mundo do ukulele e partilhar momentos únicos de música e convívio? Entra em contacto connosco e descobre como começar a tua aventura musical hoje mesmo!' />
 
     </div>
   )

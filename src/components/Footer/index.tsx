@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Youtube } from 'lucide-react'
+import { Facebook,Youtube } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
@@ -17,8 +17,8 @@ const Footer = (props: Props) => {
             <Link href="/contactos" className="hover:text-accent-hover capitalize transition-colors">contactos</Link>
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-accent-hover transition-colors"><Facebook size={24} /></a>
-            <a href="#" className="hover:text-accent-hover transition-colors"><Youtube size={24} /></a>
+            <a href="https://web.facebook.com/profile.php?id=100084051245000" className="hover:text-accent-hover transition-colors"><Facebook size={24} /></a>
+            <a href="https://www.youtube.com/@UkeMercier" className="hover:text-accent-hover transition-colors"><Youtube size={24} /></a>
           </div>
         </div>
         <div className="mt-8 text-center text-sm">

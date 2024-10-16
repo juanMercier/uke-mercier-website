@@ -53,6 +53,18 @@ const videoData = [
     title: "When the saints go marching in",
     youtubeId: "po7WB8bzM8g"
   },
+  {
+    id: 10,
+    title: "Minueto em Sol Christian Petzoldn",
+    youtubeId: "UE5QRZjOcuE"
+  },
+
+  {
+    id: 11,
+    title: "Valsa em Do - Ferdinando Carulli",
+    youtubeId: "6psl8X-7f3g"
+  },
+
 
 ]
 
@@ -73,7 +85,7 @@ export default function VideosPage() {
 
   return (
     <div className='pt-24 md:pt-0'>
-      <UpperSection title="Vídeos de Ukulele" imgLocation='/ukulele/UkuleleDeitado.jpg'/>
+      <UpperSection title="Vídeos de Ukulele" imgLocation='/explorar/Encontro Ukulele 14 Abril 2.jpg'/>
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
