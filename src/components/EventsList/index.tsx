@@ -7,9 +7,10 @@ import EventCard from '../EventCard'
 type Props = {
   past?: boolean
   workshop: boolean
+  count?: number;
 }
 
-const EventsList = ({ past , workshop}: Props) => {
+const EventsList = ({ past , workshop, count}: Props) => {
 
   let filteredEvents = [];
 
@@ -20,6 +21,8 @@ const EventsList = ({ past , workshop}: Props) => {
   else{
     filteredEvents = events.filter(event => event.workshop === false && event.past === past)
   }
+
+  filteredEvents = count ? filteredEvents.slice(0, count) : filteredEvents;
 
   return (
     <section className={`${filteredEvents.length == 0 ? "hidden" : ""} py-12 sm:py-16 md:py-20`}>

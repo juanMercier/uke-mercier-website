@@ -5,6 +5,7 @@ import EventsList from '@/components/EventsList'
 import FreeMonth from '@/components/FreeMonth'
 import AnimatedButton from '@/components/AnimatedButton'
 import SecondFooter from '@/components/SecondFooter'
+import BlogList from '@/components/BlogList'
 
 export default function Home() {
   return (
@@ -90,9 +91,21 @@ export default function Home() {
       </section>
 
 
-      <EventsList past={false} workshop={false} />
-      
-      <SecondFooter title='Pronto para começar a tua jornada de ukulele?' link='/contactos' description='Estes benefícios mostram que tocar ukulele não só enriquece a vida musicalmente, como também contribui para o crescimento pessoal, emocional e cognitivo. Não espere mais para começar a sua aventura com o ukulele!'/>
+      <div className="px-10 pt-10 pb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">Últimos Blogs</h2>
+        <BlogList count={3} />
+      </div>
+
+      <div className="px-10">
+        <EventsList past={true} workshop={false} count={2} />
+      </div>
+
+      {/* <div className="bg-white my-10">
+        <EventsList past={false} workshop={false} />
+      </div> */}
+
+
+      <SecondFooter title='Pronto para começar a tua jornada de ukulele?' link='/contactos' description='Estás preparado para explorar o mundo do ukulele e partilhar momentos únicos de música e convívio? Entra em contacto connosco e descobre como começar a tua aventura musical hoje mesmo!' />
     </>
   )
 }

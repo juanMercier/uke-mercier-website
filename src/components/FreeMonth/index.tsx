@@ -14,7 +14,7 @@ export default function FreeMonth() {
             <p className="text-xl mb-6">
               Comece sua jornada musical sem custos. Inscreva-se agora e aproveite um mês completo de aulas de ukulele gratuitamente.
             </p>
-            <AnimatedButton backgroundColor="white" textColor="tertiary" text='Comece agora' link='/contactos' />
+            <AnimatedButton backgroundColor="white" textColor="tertiary" text='Começa agora' link='/aulas' />
           </div>
           <div className="relative">
             <div className="w-64 h-64 bg-tertiary rounded-full flex items-center justify-center animate-pulse">

@@ -71,7 +71,7 @@ export default function Explorar() {
       </section>
 
       <SecondFooter
-        title='Explore Nossos Recursos'
+        title='Explora os nossos Recursos'
         link='/contactos'
         description='Nossos recursos abrangentes ajudarão você a aprender, praticar e aperfeiçoar suas habilidades no ukulele. Seja você um iniciante ou um músico experiente, temos algo para todos'
       />

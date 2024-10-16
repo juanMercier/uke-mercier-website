@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Music, Users, Star, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import UpperSection from '@/components/UpperSection'
+import AnimatedButton from '@/components/AnimatedButton'
 
 const aboutContent = {
   school: {
@@ -70,9 +71,7 @@ export default function About() {
             <h3 className="text-3xl font-bold mb-6 text-center">{aboutContent.school.cta}</h3>
             <p className="text-xl text-center mb-8">{aboutContent.school.ctaContent}</p>
             <div className="flex justify-center">
-              <Link href="/contactos" className="bg-white text-tertiary hover:bg-gray-100 font-bold py-3 px-6 rounded-full inline-flex items-center transition-colors text-lg">
-                Contacte-nos Hoje <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+            <AnimatedButton backgroundColor="white" textColor="tertiary" text='Contacta-nos Hoje' link='/contactos' />
             </div>
           </div>
         </div>
