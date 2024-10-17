@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Menu, Search, Minus, Plus, Play, Pause, Maximize, Minimize } from "lucide-react";
+import { Menu, Search, Minus, Plus, Play, Pause, Maximize, Minimize, X } from "lucide-react";
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import dynamic from "next/dynamic";
@@ -118,39 +118,50 @@ export default function CifraReader() {
     <div className={`${isFullScreen ? 'fixed inset-0 z-[60] bg-white' : 'pt-24 lg:pt-16'}`}>
       <div className="flex h-screen bg-gray-100">
         {/* Sidebar */}
-        {!isFullScreen && (
-          <div className={`${sidebarOpen ? "w-64" : "w-0"} transition-all duration-300 bg-white shadow-lg overflow-hidden`}>
-            <div className="p-4 h-full overflow-y-auto scrollbar-hide">
-              <h2 className="text-xl font-bold mb-4">Biblioteca de Cifras</h2>
-              <div className="relative mb-4">
-                <input
-                  type="text"
-                  placeholder="Buscar cifras..."
-                  value={searchTerm}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded"
-                />
-                <Search className="absolute right-3 top-2.5 text-gray-400" size={20} />
-              </div>
-              <ul className="space-y-2">
-                {filteredSongs.length > 0 ? (
-                  filteredSongs.map((song, index) => (
-                    <li key={index}>
-                      <button
-                        onClick={() => handleSongSelect(song)}
-                        className="w-full text-left p-2 hover:bg-gray-100 rounded"
-                      >
-                        {song.name}
-                      </button>
-                    </li>
-                  ))
-                ) : (
-                  <p>Sem Resultados</p>
-                )}
-              </ul>
+        <div 
+          className={`${
+            sidebarOpen ? "w-64" : "w-0"
+          } transition-all duration-300 bg-white shadow-lg overflow-hidden fixed md:relative h-full z-40`}
+        >
+          <div className="p-4 h-full overflow-y-auto scrollbar-hide">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold">Biblioteca de Cifras</h2>
+              <button 
+                onClick={() => setSidebarOpen(false)} 
+                className="p-2 rounded-full hover:bg-gray-100 md:hidden"
+                aria-label="Fechar sidebar"
+              >
+                <X size={20} />
+              </button>
             </div>
+            <div className="relative mb-4">
+              <input
+                type="text"
+                placeholder="Buscar cifras..."
+                value={searchTerm}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded"
+              />
+              <Search className="absolute right-3 top-2.5 text-gray-400" size={20} />
+            </div>
+            <ul className="space-y-2">
+              {filteredSongs.length > 0 ? (
+                filteredSongs.map((song, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => handleSongSelect(song)}
+                      className="w-full text-left p-2 hover:bg-gray-100 rounded"
+                    >
+                      {song.name}
+                    </button>
+                  </li>
+                ))
+              ) : (
+                <p>Sem Resultados</p>
+              )}
+            </ul>
           </div>
-        )}
+        </div>
 
         {/* Main content */}
         <div className="flex-1 overflow-hidden bg-primary">
@@ -198,6 +209,14 @@ export default function CifraReader() {
             )}
           </div>
         </div>
+
+        {/* Overlay for mobile */}
+        {sidebarOpen && (
+          <div 
+            className="fixed  z-20 md:hidden"
+            onClick={() => setSidebarOpen(false)}
+          ></div>
+        )}
       </div>
       {isFullScreen && (
         <div className="fixed top-4 right-4 z-[70] bg-white rounded-lg shadow-md p-2">
