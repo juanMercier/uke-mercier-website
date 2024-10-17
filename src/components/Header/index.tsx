@@ -51,7 +51,7 @@ const Header = () => {
           <Link href="/" className="flex flex-col lg:flex-row lg:gap-x-1 item-start lg:items-end font-bold text-accent">
             <span className='text-4xl'>UkeMercier</span>
             <span className='hidden lg:flex text-3xl'>-</span>
-            <span className='text-2xl'>Escola de Ukulele</span>
+            <span className='text-2xl'>Aulas de Ukulele</span>
           </Link>
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">

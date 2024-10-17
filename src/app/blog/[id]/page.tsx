@@ -33,7 +33,7 @@ export default function BlogPost({ params }: Props) {
           <span>Voltar ao Blog</span>
         </Link>
 
-        <article className="max-w-3xl mx-auto px-4 py-12 lg:py-1">
+        <article className="max-w-5xl mx-auto px-4 py-12 lg:py-1">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">{post.title}</h1>
           <div className="flex items-center text-secondary mb-8">
             <span className="mr-4">{new Date(post.date).toLocaleDateString('pt-PT')}</span>

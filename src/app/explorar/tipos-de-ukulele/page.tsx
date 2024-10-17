@@ -44,7 +44,7 @@ export default function TiposDeUkuleles() {
                                 />
                                 <div className="p-6">
                                     <h2 className="text-2xl font-bold mb-4 text-tertiary">{ukulele.type}</h2>
-                                    <p className="text-secondary text-justify">{ukulele.description}</p>
+                                    <p className="text-secondary text-lg text-justify">{ukulele.description}</p>
                                 </div>
                             </div>
                         ))}
@@ -54,8 +54,8 @@ export default function TiposDeUkuleles() {
 
             <section className="py-12 sm:py-16 md:py-20 bg-tertiary text-white">
                 <div className="container mx-auto px-4">
-                    <p className="text-lg text-center max-w-3xl mx-auto">
-                        Cada um deles tem o seu timbre característico, no entanto este não depende apenas do tamanho mas também das madeiras utilizadas na sua construção assim como do tipo de cordas.
+                    <p className="text-xl text-center max-w-3xl mx-auto">
+                        Cada um dos tipos de ukuleles tem o seu timbre característico, no entanto este não depende apenas do tamanho mas também das madeiras utilizadas na sua construção assim como do tipo de cordas.
                     </p>
                 </div>
             </section>

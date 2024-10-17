@@ -3,7 +3,10 @@ import Image from 'next/image'
 
 const ukuleleHistory = {
   title: "História do Ukulele",
-  intro: "O ukulele tem sua origem no século XIX tendo como ancestrais a Braguinha ou Machete e o Rajão, instrumentos levados pelos madeirenses, quando estes emigraram para o Havaí para trabalhar no cultivo da cana-de-açúcar. Por sua vez a braguinha ou Machete é um descendente do Cavaquinho Português. Sim, a origem deste instrumento musical é Portuguesa!",
+  intro: [
+    "O ukulele tem sua origem no século XIX tendo como ancestrais a Braguinha ou Machete e o Rajão, instrumentos levados pelos madeirenses, quando estes emigraram para o Havaí para trabalhar no cultivo da cana-de-açúcar. Por sua vez a braguinha ou Machete é um descendente do Cavaquinho Português.",
+    "Sim, a origem deste instrumento musical é Portuguesa!"
+  ],
   meaning: {
     title: "O Significado de Ukulele",
     content: [
@@ -38,14 +41,16 @@ const ukuleleHistory = {
 export default function HistoriaDoUkulele() {
   return (
     <div className='pt-24 md:pt-0'>
-    <UpperSection title={ukuleleHistory.title} imgLocation='/ukulele/ukulele3.webp' />
+      <UpperSection title={ukuleleHistory.title} imgLocation='/ukulele/ukulele3.webp' />
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container flex flex-col items-center mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <p className="mb-6 text-lg leading-relaxed text-justify">{ukuleleHistory.intro}</p>
+          <div className="max-w-4xl mx-auto">
+            {ukuleleHistory.intro.map((paragraph, index) => (
+              <p key={index} className="mb-6 text-lg leading-relaxed text-justify">{paragraph}</p>
+            ))}
 
-            <div className="px-8 mb-8">
+            <div className="px-8 md:px-28 mb-8">
               <Image
                 src="/historia/ancientUkes.png"
                 alt="Traditional Portuguese instruments"
@@ -66,7 +71,7 @@ export default function HistoriaDoUkulele() {
               <p key={index} className="mb-6 text-lg leading-relaxed text-justify">{paragraph}</p>
             ))}
 
-            <div className="px-8 mb-8">
+            <div className="px-8 md:px-28 mb-8">
               <Image
                 src="/historia/ancientHawaiiPlayers.jpg"
                 alt="Early ukulele players in Hawaii"
