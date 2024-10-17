@@ -56,7 +56,7 @@ export default function Explorar() {
                 <div className="p-6">
                   <resource.icon className="w-12 h-12 text-tertiary mb-4" />
                   <h2 className="text-2xl font-bold mb-4">{resource.title}</h2>
-                  <p className="text-gray-600 mb-6">{resource.description}</p>
+                  <p className="text-secondary text-lg mb-6">{resource.description}</p>
                   {/* <Link href={resource.link} className="text-tertiary hover:text-tertiary-hover font-semibold flex items-center">
                     Saiba mais
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">

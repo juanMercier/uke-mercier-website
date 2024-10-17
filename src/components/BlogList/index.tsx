@@ -25,7 +25,7 @@ const BlogList = ({ count }: Props) => {
                     <div className="flex flex-col justify-between flex-grow p-6">
                         <div>
                             <h2 className="text-xl font-bold mb-2 text-gray-800">{post.title}</h2>
-                            <p className="text-secondary mb-4">{post.resume}</p>
+                            <p className="text-secondary text-lg mb-4">{post.resume}</p>
                         </div>
 
                         <div className="flex justify-between items-center mt-auto">

@@ -3,65 +3,80 @@
 import UpperSection from '@/components/UpperSection';
 import { useState } from 'react'
 
-// This would typically come from a database or API
+enum Difficulty {
+  PRINCIPIANTE = 'Principiante',
+  INTERMEDIO = 'Intermédio',
+  AVANCADO = 'Avançado',
+}
+
 const videoData = [
   {
     id: 1,
-    title: "Moon River Fingerstyle - Nível Avançado",
-    youtubeId: "ZoDYr5dIY9s"
+    title: "Moon River Fingerstyle",
+    youtubeId: "ZoDYr5dIY9s",
+    difficulty: Difficulty.AVANCADO,
   },
   {
     id: 2,
     title: "Don't Stop me now",
+    difficulty: Difficulty.AVANCADO,
     youtubeId: "Hq9dvYrbCdU"
   },
   {
     id: 3,
     title: "Ukulele Estudo nº1",
+    difficulty: Difficulty.PRINCIPIANTE,
     youtubeId: "84rvT6xuQAQ"
   },
   {
     id: 4,
     title: "Ukulele Estudo nº2 - Meditação",
+    difficulty: Difficulty.INTERMEDIO,
     youtubeId: "SW_Dsb4P7wg"
   },
-
   {
     id: 5,
     title: "Exercício Minhoca",
+    difficulty: Difficulty.PRINCIPIANTE,
     youtubeId: "AP9pTXnVrWI"
   },
 
   {
     id: 6,
     title: "Jingle Bells 80bpm",
+    difficulty: Difficulty.PRINCIPIANTE,
     youtubeId: "aIQZ11mHQoo"
   },
 
   {
     id: 7,
     title: "Hino da Alegria 80bpm",
+    difficulty: Difficulty.PRINCIPIANTE,
     youtubeId: "6oc73zwG1cM"
   },
   {
     id: 8,
     title: "Imagine Primeira Parte",
+    difficulty: Difficulty.PRINCIPIANTE,
     youtubeId: "HaZU5EglMJE"
   },
   {
     id: 9,
     title: "When the saints go marching in",
+    difficulty: Difficulty.INTERMEDIO,
     youtubeId: "po7WB8bzM8g"
   },
   {
     id: 10,
     title: "Minueto em Sol Christian Petzoldn",
+    difficulty: Difficulty.AVANCADO,
     youtubeId: "UE5QRZjOcuE"
   },
 
   {
     id: 11,
     title: "Valsa em Do - Ferdinando Carulli",
+    difficulty: Difficulty.INTERMEDIO,
     youtubeId: "6psl8X-7f3g"
   },
 
@@ -81,7 +96,8 @@ const VideoEmbed = ({ youtubeId, title }: { youtubeId: string, title: string }) 
 )
 
 export default function VideosPage() {
-  const [selectedVideo, setSelectedVideo] = useState(videoData[0])
+  const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
+  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>(Difficulty.PRINCIPIANTE);
 
   return (
     <div className='pt-24 md:pt-0'>
@@ -98,20 +114,37 @@ export default function VideosPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Mais Vídeos</h3>
-              <div className="space-y-4">
-                {videoData.map((video) => (
+              <div className="flex space-x-2 mb-4">
+                {Object.values(Difficulty).map((difficulty) => (
                   <button
-                    key={video.id}
-                    onClick={() => setSelectedVideo(video)}
-                    className={`w-full text-left p-4 rounded-lg transition-colors ${
-                      selectedVideo.id === video.id
-                        ? 'bg-tertiary rounded-xl text-white'
-                        : 'bg-primary-foreground rounded-xl hover:bg-tertiary-hover'
+                    key={difficulty}
+                    onClick={() => setSelectedDifficulty(difficulty)}
+                    className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                      selectedDifficulty === difficulty
+                        ? 'bg-tertiary text-white'
+                        : 'bg-primary-foreground hover:bg-tertiary-hover'
                     }`}
                   >
-                    {video.title}
+                    {difficulty}
                   </button>
                 ))}
+              </div>
+              <div className="space-y-2">
+                {videoData
+                  .filter((video) => video.difficulty === selectedDifficulty)
+                  .map((video) => (
+                    <button
+                      key={video.id}
+                      onClick={() => setSelectedVideo(video)}
+                      className={`w-full text-left p-3 rounded-xl transition-colors ${
+                        selectedVideo.id === video.id
+                          ? 'bg-tertiary text-white'
+                          : 'bg-primary-foreground hover:bg-tertiary-hover'
+                      }`}
+                    >
+                      {video.title}
+                    </button>
+                  ))}
               </div>
             </div>
           </div>
@@ -120,7 +153,6 @@ export default function VideosPage() {
     </div>
   )
 }
-
 
 
 

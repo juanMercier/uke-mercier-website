@@ -3,42 +3,54 @@
 import { useState, useEffect } from 'react'
 import { User, Users, Clock, X, CheckCircle } from 'lucide-react'
 import UpperSection from '@/components/UpperSection'
-import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { useForm, ValidationError } from '@formspree/react'
 
+
+enum ClassType {
+  GROUP = 'Grupo',
+  INDIVIDUAL = 'Individual',
+}
+
+enum Difficulty {
+  PRINCIPANTE = 'Principiante',
+  INTERMEDIO = 'Intermédio',
+  AVANCADO = 'Avançado',
+}
+
 const classTypes = [
   {
-    type: 'Individual',
-    icon: User,
-    description: 'Aulas individuais personalizadas para atender às suas necessidades específicas. Foco intensivo no seu desenvolvimento pessoal.',
-  },
-  {
-    type: 'Grupo',
+    type: ClassType.GROUP,
     icon: Users,
     description: 'Aulas em grupo para aprender e praticar em um ambiente colaborativo e divertido. Ótimo para desenvolver habilidades de conjunto.',
+  },
+  {
+    type: ClassType.INDIVIDUAL,
+    icon: User,
+    description: 'Aulas individuais personalizadas para atender às suas necessidades específicas. Foco intensivo no seu desenvolvimento pessoal.',
   },
 ]
 
 const weekDays = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex']
 
+
+
 const classSchedule = [
-  { day: 'Seg', time: '18:00 - 19:30', type: 'Grupo' },
-  { day: 'Ter', time: '17:00 - 18:00', type: 'Individual' },
-  { day: 'Ter', time: '19:00 - 20:30', type: 'Grupo' },
-  { day: 'Qua', time: '18:00 - 19:00', type: 'Individual' },
-  { day: 'Qui', time: '17:00 - 18:30', type: 'Grupo' },
-  { day: 'Sex', time: '16:00 - 17:00', type: 'Individual' }
+  { day: 'Qua', time: '12:45 - 13:45', type: ClassType.GROUP, difficulty: Difficulty.AVANCADO },
+  { day: 'Qua', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.PRINCIPANTE },
+  { day: 'Qui', time: '12:45 - 13:45', type: ClassType.GROUP, difficulty: Difficulty.INTERMEDIO },
+  { day: 'Qui', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.AVANCADO },
+  { day: 'Sex', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.PRINCIPANTE }
 ]
 
 export default function ClassInformation() {
-  const [selectedDay, setSelectedDay] = useState(weekDays[0])
+  const [selectedDay, setSelectedDay] = useState(weekDays[2])
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedClassType, setSelectedClassType] = useState('')
   const [isFadingOut, setIsFadingOut] = useState(false)
   const [state, handleSubmit] = useForm("xgveelzo")
 
-  const openModal = (classType: string) => {
+  const openModal = (classType: ClassType) => {
     setSelectedClassType(classType)
     setIsModalOpen(true)
   }
@@ -69,7 +81,7 @@ export default function ClassInformation() {
     }
   }, [state.succeeded]);
 
-  
+
   return (
     <div className='pt-24 lg:pt-0'>
       <UpperSection title='Aulas' imgLocation='/group/groupPlayingInPark.jpg' />
@@ -92,7 +104,7 @@ export default function ClassInformation() {
                     onClick={() => openModal(classType.type)}
                     className="w-full bg-tertiary text-primary font-bold py-2 px-4 rounded-full hover:bg-tertiary-hover transition-colors duration-300"
                   >
-                    Inscrever-se
+                    Obter mais Informações
                   </button>
                 </div>
               ))}
@@ -107,8 +119,8 @@ export default function ClassInformation() {
                   key={day}
                   onClick={() => setSelectedDay(day)}
                   className={`w-10 h-10 rounded-full font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary focus:ring-tertiary ${selectedDay === day
-                      ? 'bg-tertiary text-primary'
-                      : 'bg-secondary text-primary hover:bg-secondary-hover'
+                    ? 'bg-tertiary text-primary'
+                    : 'bg-secondary text-primary hover:bg-secondary-hover'
                     }`}
                 >
                   {day}
@@ -121,6 +133,7 @@ export default function ClassInformation() {
                   <tr className="border-b border-secondary border-opacity-20">
                     <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase tracking-wider">Horário</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase tracking-wider">Tipo de Aula</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase tracking-wider">Nível</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-secondary divide-opacity-20">
@@ -130,6 +143,7 @@ export default function ClassInformation() {
                       <tr key={index}>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary">{schedule.time}</td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary">{schedule.type}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary">{schedule.difficulty}</td>
                       </tr>
                     ))}
                 </tbody>
@@ -217,7 +231,7 @@ export default function ClassInformation() {
 
 
         {state.succeeded && (
-          <div className={`fixed bottom-4 right-4 bg-tertiary text-primary px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 ${isFadingOut ?  'opacity-0' : 'opacity-100'}`}>
+          <div className={`fixed bottom-4 right-4 bg-tertiary text-primary px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
             <CheckCircle className="h-6 w-6" />
             <span className="font-bold">Obrigado por se inscrever! Entraremos em contato em breve.</span>
           </div>

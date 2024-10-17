@@ -77,7 +77,7 @@ export default function Contactos() {
             <div className='mt-12'>
               <h2 className="text-2xl font-bold mb-6">Tem alguma questão ou sugestão?</h2>
               <p className="text-secondary text-lg">
-              Estamos aqui para ajudar! Preencha o formulário ao lado e entraremos em contacto consigo o mais breve possível. Se preferir, pode também enviar-nos um email diretamente ou ligar para o nosso número de apoio. Adoramos ouvir as suas ideias e responder a todas as suas dúvidas!
+              Estamos aqui para ajudar! Preencha o formulário e entraremos em contacto consigo o mais breve possível. Se preferir, pode também enviar-nos um email diretamente ou ligar para o nosso número de apoio. Adoramos ouvir as suas ideias e responder a todas as suas dúvidas!
               </p>
             </div>
             <div className="bg-primary-foreground p-8 rounded-xl shadow-md mb-12">
@@ -114,7 +114,7 @@ export default function Contactos() {
       {state.succeeded && (
           <div className={`fixed bottom-4 right-4 bg-tertiary text-primary px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
             <CheckCircle className="h-6 w-6" />
-            <span className="font-bold">Obrigado por se inscrever! Entraremos em contato em breve.</span>
+            <span className="font-bold">Obrigado por dar a sua sugestão! Entraremos em contato em breve.</span>
           </div>
         )}
     </div>

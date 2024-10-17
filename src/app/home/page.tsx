@@ -52,17 +52,17 @@ export default function Home() {
             <Link href='/sobre' className="bg-primary-foreground p-6 sm:p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-transform duration-300 hover:scale-105">
               <Music className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary mx-auto mb-4" />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">Aulas Especializadas</h3>
-              <p className="text-secondary text-sm sm:text-base">Aprende com o experiente professor Carlos Mercier e descubra a alegria de tocar ukulele.</p>
+              <p className="text-secondary text-lg sm:text-base">Aprende com o experiente professor Carlos Mercier e descubra a alegria de tocar ukulele.</p>
             </Link>
             <Link href='/explorar' className="bg-primary-foreground p-6 sm:p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-transform duration-300 hover:scale-105">
               <Book className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary mx-auto mb-4" />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">Recursos Compreensivos</h3>
-              <p className="text-secondary text-sm sm:text-base">Acede à nossa ferramenta de leitura de cifras e blog de música para melhorar a sua experiência.</p>
+              <p className="text-secondary text-lg sm:text-base">Acede à nossa ferramenta de leitura de cifras e blog de música para melhorar a sua experiência.</p>
             </Link>
             <Link href='/eventos' className="bg-primary-foreground p-6 sm:p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-transform duration-300 hover:scale-105">
               <Calendar className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary mx-auto mb-4" />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">Eventos da Comunidade</h3>
-              <p className="text-secondary text-sm sm:text-base">Junta-te aos nossos eventos UkeInParque e conecta-te com outros entusiastas de ukulele.</p>
+              <p className="text-secondary text-lg sm:text-base">Junta-te aos nossos eventos UkeInParque e conecta-te com outros entusiastas de ukulele.</p>
             </Link>
           </div>
         </div>

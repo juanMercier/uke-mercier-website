@@ -85,6 +85,7 @@ export default function CifraReader() {
   const handleSongSelect = (song: { name: string; url: string }) => {
     setSelectedSong(song);
     setWasManuallyScrolled(false);
+    setSidebarOpen(false);
     if (contentRef.current) {
       contentRef.current.scrollTop = 0;
     }
