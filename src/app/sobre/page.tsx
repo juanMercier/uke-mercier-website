@@ -97,7 +97,7 @@ export default function About() {
             </div>
             <div className="md:w-2/3">
               {aboutContent.professor.content.map((paragraph, index) => (
-                <p key={index} className="mb-4 text-md text-secondary leading-relaxed text-justify">{paragraph}</p>
+                <p key={index} className="mb-4 text-lg text-secondary leading-relaxed text-justify">{paragraph}</p>
               ))}
             </div>
           </div>
