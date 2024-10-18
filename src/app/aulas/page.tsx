@@ -155,9 +155,9 @@ export default function ClassInformation() {
         </div>
 
         {isModalOpen && (
-          <div className="fixed inset-0 bg-secondary bg-opacity-50 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-10 bg-secondary bg-opacity-50 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
             <div className="bg-primary rounded-2xl p-8 w-full max-w-md relative animate-fade-in-scale">
-              <h3 className="text-2xl font-bold text-secondary mb-4">Inscrever-se para Aula {selectedClassType}</h3>
+              <h3 className="text-2xl font-bold text-secondary mb-4">Obter mais Informações para Aula {selectedClassType === ClassType.GROUP ? 'de' : ''} {selectedClassType}</h3>
               <form onSubmit={onSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-secondary mb-1">Nome</label>
