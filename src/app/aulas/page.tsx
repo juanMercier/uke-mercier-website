@@ -49,6 +49,7 @@ export default function ClassInformation() {
   const [selectedClassType, setSelectedClassType] = useState('')
   const [isFadingOut, setIsFadingOut] = useState(false)
   const [state, handleSubmit] = useForm("xgveelzo")
+  const [consentChecked, setConsentChecked] = useState(false);
 
   const openModal = (classType: ClassType) => {
     setSelectedClassType(classType)
@@ -62,7 +63,8 @@ export default function ClassInformation() {
     e.preventDefault()
     const form = e.currentTarget
     const formData = new FormData(form)
-    formData.set('class_type', selectedClassType)
+    formData.set('tipo_de_aula', selectedClassType)
+    formData.set('consentimento', consentChecked.toString());
     await handleSubmit(formData)
   }
 
@@ -153,7 +155,7 @@ export default function ClassInformation() {
         </div>
 
         {isModalOpen && (
-          <div className="fixed inset-0 z-10 bg-secondary bg-opacity-50 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-secondary bg-opacity-50 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
             <div className="bg-primary rounded-2xl p-8 w-full max-w-md relative animate-fade-in-scale">
               <h3 className="text-2xl font-bold text-secondary mb-4">Inscrever-se para Aula {selectedClassType}</h3>
               <form onSubmit={onSubmit} className="space-y-4">
@@ -183,39 +185,35 @@ export default function ClassInformation() {
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-secondary mb-1">Telemóvel</label>
-                  {/* <PhoneInput
-                  country={'pt'}
-                  value={phone}
-                  onChange={(value) => setPhone(value)}
-                  inputProps={{
-                    id: 'phone',
-                    name: 'phone',
-                    required: true,
-                  }}
-                  containerClass="!w-full"
-                  inputClass="!w-full !h-auto !py-2 !pl-[4.5rem] !pr-4 !rounded-full !border-secondary focus:!outline-none focus:!ring-2 focus:!ring-tertiary"
-                  buttonClass="!absolute !top-0 !bottom-0 !left-0 !border-secondary !rounded-l-full !px-3"
-                  dropdownClass="!left-0 !rounded-lg !border-secondary"
-                  searchClass="!m-0 !p-2 !border-b !border-secondary"
-                  enableSearch={true}
-                  disableSearchIcon={true}
-                /> */}
                   <input
-                    type="number"
-                    id="number"
-                    name="number"
+                    type="tel"
+                    id="phone"
+                    name="phone"
                     className="w-full px-4 py-2 rounded-full border border-secondary focus:outline-none focus:ring-2 focus:ring-tertiary"
                     placeholder="Número de telemóvel"
                     required
                   />
                   <ValidationError prefix="Phone" field="phone" errors={state.errors} />
                 </div>
+                <div className="flex items-start mb-4">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    checked={consentChecked}
+                    onChange={(e) => setConsentChecked(e.target.checked)}
+                    className="mt-1 mr-2"
+                    required
+                  />
+                  <label htmlFor="consent" className="text-sm text-secondary">
+                    Dou o meu consentimento para o processamento dos meus dados pessoais.
+                  </label>
+                </div>
                 <button
                   type="submit"
-                  disabled={state.submitting}
+                  disabled={state.submitting || !consentChecked}
                   className="w-full bg-tertiary text-primary font-bold py-2 px-4 rounded-full hover:bg-tertiary-hover transition-colors duration-300 disabled:opacity-50"
                 >
-                  {state.submitting ? 'Enviando...' : 'Inscrever-se'}
+                  {state.submitting ? 'Enviando...' : 'Enviar pedido'}
                 </button>
               </form>
               <button
@@ -233,7 +231,7 @@ export default function ClassInformation() {
         {state.succeeded && (
           <div className={`fixed bottom-4 right-4 bg-tertiary text-primary px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
             <CheckCircle className="h-6 w-6" />
-            <span className="font-bold">Obrigado por se inscrever! Entraremos em contato em breve.</span>
+            <span className="font-bold">Obrigado! Entraremos em contato em breve.</span>
           </div>
         )}
       </div>
