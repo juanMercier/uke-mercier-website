@@ -164,7 +164,7 @@ export default function EventPost({ params }: Props) {
                     required
                   />
                   <label htmlFor="consent" className="text-sm text-secondary">
-                    Dou o meu consentimento para o processamento dos meus dados pessoais.
+                    Dou o meu consentimento para o processamento dos meus dados pessoais de acordo com a <Link href="/politica-de-privacidade" className='text-tertiary underline'>Política de privacidade</Link>.
                   </label>
                 </div>
                 <button
