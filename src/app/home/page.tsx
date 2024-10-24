@@ -96,13 +96,13 @@ export default function Home() {
         <BlogList count={3} />
       </div>
 
+      <div className="bg-white px-10">
+        <EventsList past={false} workshop={false} />
+      </div>
+
       <div className="px-10">
         <EventsList past={true} workshop={false} count={2} />
       </div>
-
-      {/* <div className="bg-white my-10">
-        <EventsList past={false} workshop={false} />
-      </div> */}
 
 
       <SecondFooter title='Pronto para começar a tua jornada de ukulele?' link='/contactos' description='Estás preparado para explorar o mundo do ukulele e partilhar momentos únicos de música e convívio? Entra em contacto connosco e descobre como começar a tua aventura musical hoje mesmo!' />

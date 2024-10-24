@@ -5,6 +5,7 @@ import { User, Users, Clock, X, CheckCircle } from 'lucide-react'
 import UpperSection from '@/components/UpperSection'
 import 'react-phone-input-2/lib/style.css'
 import { useForm, ValidationError } from '@formspree/react'
+import Link from 'next/link'
 
 
 enum ClassType {
@@ -205,7 +206,7 @@ export default function ClassInformation() {
                     required
                   />
                   <label htmlFor="consent" className="text-sm text-secondary">
-                    Dou o meu consentimento para o processamento dos meus dados pessoais.
+                    Dou o meu consentimento para o processamento dos meus dados pessoais de acordo com a <Link href="/politica-de-privacidade" className='text-tertiary underline'>Política de privacidade</Link>.
                   </label>
                 </div>
                 <button

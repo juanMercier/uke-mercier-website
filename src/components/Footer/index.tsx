@@ -15,6 +15,7 @@ const Footer = (props: Props) => {
             <Link href="/blog" className="hover:text-accent-hover capitalize transition-colors">blog</Link>
             <Link href="/eventos" className="hover:text-accent-hover capitalize transition-colors">eventos</Link>
             <Link href="/contactos" className="hover:text-accent-hover capitalize transition-colors">contactos</Link>
+            <Link href="/politica-de-privacidade" className="hover:text-accent-hover capitalize transition-colors">Política de Privacidade</Link>
           </div>
           <div className="flex space-x-4">
             <a href="https://web.facebook.com/profile.php?id=100084051245000" className="hover:text-accent-hover transition-colors"><Facebook size={24} /></a>
