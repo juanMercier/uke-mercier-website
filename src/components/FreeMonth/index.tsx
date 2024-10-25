@@ -12,7 +12,7 @@ export default function FreeMonth() {
               Primeiro Mês de Aulas Grátis!
             </h2>
             <p className="text-xl mb-6">
-              Comece sua jornada musical sem custos. Inscreva-se agora e aproveite um mês completo de aulas de ukulele gratuitamente.
+              Comece sua jornada musical sem custos. Inscreva-se agora e aproveite um mês completo de aulas de grupo gratuitamente.
             </p>
             <AnimatedButton backgroundColor="white" textColor="tertiary" text='Começa agora' link='/aulas' />
           </div>

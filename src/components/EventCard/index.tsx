@@ -47,7 +47,7 @@ const EventCard = ({
                     src={imageUrl}
                     alt={title}
                     layout="fill"
-                    objectFit="cover"
+                    objectFit=""
                     className="rounded-xl"
                 />
             </div>
