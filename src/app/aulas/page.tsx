@@ -23,12 +23,12 @@ const classTypes = [
   {
     type: ClassType.GROUP,
     icon: Users,
-    description: 'Aulas em grupo para aprender e praticar em um ambiente colaborativo e divertido. Ótimo para desenvolver habilidades de conjunto.',
+    description: 'As aulas em grupo proporcionam uma experiência musical única, onde a alegria e o prazer de tocar em conjunto são centrais. Todos os alunos têm a oportunidade de tocar músicas adaptadas ao seu nível, e o professor garante que cada tema contribua para um progresso harmonioso e estimulante.',
   },
   {
     type: ClassType.INDIVIDUAL,
     icon: User,
-    description: 'Aulas individuais personalizadas para atender às suas necessidades específicas. Foco intensivo no seu desenvolvimento pessoal.',
+    description: 'As aulas individuais oferecem um ensino personalizado, ajustado ao ritmo único de cada aluno. Durante estas aulas, os alunos têm a liberdade de escolher os temas que desejam aprender, desde que estejam adequados ao seu nível de aprendizagem. Além disso, o professor sugere outros temas pertinentes para garantir um progresso mais rápido e eficaz.',
   },
 ]
 
@@ -87,7 +87,7 @@ export default function ClassInformation() {
 
   return (
     <div className='pt-24 lg:pt-0'>
-      <UpperSection title='Aulas' imgLocation='/group/groupPlayingInPark.jpg' />
+      <UpperSection title='Aulas' imgLocation='/group/FotoAulas.jpg' />
       <div className="min-h-screen bg-primary text-secondary py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
 

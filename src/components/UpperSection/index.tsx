@@ -8,7 +8,7 @@ type UpperSectionProps = {
 
 const UpperSection = ({imgLocation, title}: UpperSectionProps) => {
   return (
-    <section className="relative h-64 sm:h-80 md:h-96 flex items-center justify-center">
+    <section className="relative md:mt-16 h-64 sm:h-80 md:h-96 flex items-center justify-center">
     <Image
       src={imgLocation}
       alt=""

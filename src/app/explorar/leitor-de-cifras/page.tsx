@@ -42,8 +42,9 @@ export default function CifraReader() {
           return { name: changeFileName(item.name), url };
         })
       );
-      setSongs(songData);
-      setFilteredSongs(songData);
+      const sortedSongData = songData.sort((a, b) => a.name.localeCompare(b.name));
+      setSongs(sortedSongData);
+      setFilteredSongs(sortedSongData);
     };
 
     fetchSongs();
