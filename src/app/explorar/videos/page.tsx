@@ -68,7 +68,7 @@ const videoData = [
   },
   {
     id: 10,
-    title: "Minueto em Sol Christian Petzoldn",
+    title: "Minueto em Sol Christian Petzold",
     difficulty: Difficulty.AVANCADO,
     youtubeId: "UE5QRZjOcuE"
   },

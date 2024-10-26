@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
 
               <h2 className="text-2xl font-bold text-tertiary mb-4">Direitos dos titulares dos dados:</h2>
               <p className="text-lg text-secondary mb-6">
-                Você tem o direito de acessar, corrigir, limitar o uso, apagar ou transferir os seus dados a qualquer momento. Para exercer estes direitos, por favor, entre em contato conosco através do e-mail <a href="mailto:ukeinparque@gmail.com" className="text-tertiary hover:underline">ukeinparque@gmail.com</a>.
+                Você tem o direito de acessar, corrigir, limitar o uso, apagar ou transferir os seus dados a qualquer momento. Para exercer estes direitos, por favor, entre em contato connosco através do e-mail <a href="mailto:ukeinparque@gmail.com" className="text-tertiary hover:underline">ukeinparque@gmail.com</a>.
               </p>
 
               <h2 className="text-2xl font-bold text-tertiary mb-4">Período de retenção:</h2>
