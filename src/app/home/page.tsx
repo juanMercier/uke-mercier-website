@@ -57,7 +57,7 @@ export default function Home() {
             <Link href='/explorar' className="bg-primary-foreground p-6 sm:p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-transform duration-300 hover:scale-105">
               <Book className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary mx-auto mb-4" />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">Explora e Aprende</h3>
-              <p className="text-secondary text-lg sm:text-base">Acede à nossa ferramenta de leitura de cifras, conhece melhor a história e tipos de ukulele e muito mais</p>
+              <p className="text-secondary text-lg sm:text-base">Acede à nossa ferramenta de leitura de cifras, conhece melhor a história e tipos de ukulele e muito mais.</p>
             </Link>
             <Link href='/eventos' className="bg-primary-foreground p-6 sm:p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-transform duration-300 hover:scale-105">
               <Calendar className="w-12 h-12 sm:w-16 sm:h-16 text-tertiary mx-auto mb-4" />

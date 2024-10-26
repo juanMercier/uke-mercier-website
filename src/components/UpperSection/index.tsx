@@ -16,7 +16,7 @@ const UpperSection = ({imgLocation, title}: UpperSectionProps) => {
       objectFit="cover"
       priority
     />
-    <div className="absolute inset-0 bg-black bg-opacity-50" />
+    <div className="absolute inset-0 bg-black bg-opacity-20" />
     <h1 className="relative z-10 text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">{title}</h1>
   </section>
 

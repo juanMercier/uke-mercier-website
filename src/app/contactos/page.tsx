@@ -77,7 +77,7 @@ export default function Contactos() {
             <div className='mt-12'>
               <h2 className="text-2xl font-bold mb-6">Tem alguma questão ou sugestão?</h2>
               <p className="text-secondary text-lg">
-              Estamos aqui para ajudar! Preencha o formulário e entraremos em contacto consigo o mais breve possível. Se preferir, pode também enviar-nos um email diretamente ou ligar para o nosso número de apoio. Adoramos ouvir as suas ideias e responder a todas as suas dúvidas!
+              Estamos aqui para ajudar! Preencha o formulário e entraremos em contacto consigo o mais breve possível. Se preferir, pode também enviar-nos um email diretamente ou ligar para o nosso número. Adoramos ouvir as suas ideias e responder a todas as suas dúvidas!
               </p>
             </div>
             <div className="bg-primary-foreground p-8 rounded-xl shadow-md mb-12">
