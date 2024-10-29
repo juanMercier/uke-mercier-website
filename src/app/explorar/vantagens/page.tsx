@@ -21,7 +21,7 @@ const benefits = [
 export default function Benefits() {
   return (
     <div className='pt-24 md:pt-0'>
-      <UpperSection imgLocation='/group/groupPhotoPark.jpg' title='Vantagens de Tocar' />
+      <UpperSection imgLocation='/explorar/vantagenss.png' title='Vantagens de Tocar' />
 
       <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
