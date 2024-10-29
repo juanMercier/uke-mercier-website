@@ -4,7 +4,7 @@ import UpperSection from '@/components/UpperSection'
 export default function AfinacaoUkulele() {
   return (
     <div className='pt-24 md:pt-0'>
-        <UpperSection title='Afinação' imgLocation='/ukulele/ukulele3.webp' />
+        <UpperSection title='Afinação' imgLocation='/explorar/Afinacao_Ukulele.png' />
 
 
       <section className="py-12 sm:py-16 md:py-20">
