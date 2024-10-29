@@ -7,26 +7,31 @@ const WelcomeGuide: React.FC = () => {
   const steps = [
     {
       title: "Bem-vindo ao Leitor de Cifras!",
-      content: "Este guia rápido vai te ajudar a começar. Use os botões acima para navegar e controlar a leitura das cifras."
+      content: "Este guia rápido vai te ajudar a começar. Usa os botões acima para navegar e controlar a leitura das cifras."
     },
     {
-      title: "Escolha uma Música",
-      content: "Clique no botão de menu no canto superior esquerdo para abrir a biblioteca de músicas e selecionar uma cifra.",
+      title: "Escolhe uma Música",
+      content: "Clica no menu no canto superior esquerdo para abrir a biblioteca de músicas e escolher uma cifra.",
       arrow: "menu"
     },
     {
-      title: "Ajuste a Velocidade",
-      content: "Use os controles no canto superior direito para ajustar a velocidade de rolagem da cifra conforme sua preferência.",
+      title: "Ajusta a Velocidade",
+      content: "Usa os controles no canto superior direito para ajustar a velocidade de rolagem da cifra como preferires.",
       arrow: "controls"
     },
     {
+      title: "Carrega no Play",
+      content: "Clica no botão de play para iniciar a rolagem automática da cifra.",
+      arrow: "playPause"
+    },
+    {
       title: "Tela Cheia",
-      content: "Clica no botão de tela cheia para uma melhor vizualização da cifra",
+      content: "Clica no botão de tela cheia para uma melhor visualização da cifra.",
       arrow: "fullScreen"
     },
     {
-      title: "Comece a Tocar!",
-      content: "Após selecionar uma música e ajustar a velocidade, você está pronto para começar. Aproveite sua sessão musical!"
+      title: "Começa a Tocar!",
+      content: "Após escolher uma música e ajustar a velocidade, estás pronto para começar. Aproveita a tua sessão musical!"
     }
   ];
 
@@ -50,21 +55,33 @@ const WelcomeGuide: React.FC = () => {
     <div className="flex items-center justify-center min-h-[400px]">
       {/* Menu Arrow */}
       {steps[step].arrow === 'menu' && (
-        <div className="fixed top-40 left-6 w-8 h-8 transform -rotate-45">
+        <div className="fixed top-48 lg:top-40  left-6 w-8 h-8 transform -rotate-45">
           <div className="absolute w-full h-full border-t-8 border-r-8 border-blue-500 animate-pulse" />
         </div>
       )}
 
       {/* Controls Arrow */}
       {steps[step].arrow === 'controls' && (
-        <div className="fixed top-40 right-24 w-8 h-8 transform rotate-45">
+        <>
+          <div className="fixed top-48 lg:top-40 right-56 w-8 h-8 transform rotate-45">
+            <div className="absolute w-full h-full border-t-8 border-l-8 border-blue-500 animate-pulse" />
+          </div>
+          <div className="fixed top-48 lg:top-40 right-32 w-8 h-8 transform rotate-45">
+            <div className="absolute w-full h-full border-t-8 border-l-8 border-blue-500 animate-pulse" />
+          </div>
+        </>
+      )}
+
+      {/* playPause Arrow */}
+      {steps[step].arrow === 'playPause' && (
+        <div className="fixed top-48 lg:top-40 right-20 w-8 h-8 transform rotate-45">
           <div className="absolute w-full h-full border-t-8 border-l-8 border-blue-500 animate-pulse" />
         </div>
       )}
 
       {/* fullScreen Arrow */}
       {steps[step].arrow === 'fullScreen' && (
-        <div className="fixed top-40 right-6 w-8 h-8 transform rotate-45">
+        <div className="fixed top-48 lg:top-40 right-4 w-8 h-8 transform rotate-45">
           <div className="absolute w-full h-full border-t-8 border-l-8 border-blue-500 animate-pulse" />
         </div>
       )}
@@ -87,8 +104,8 @@ const WelcomeGuide: React.FC = () => {
             onClick={handlePrevious}
             disabled={step === 0}
             className={`flex items-center transition-colors ${step === 0
-                ? 'text-gray-400 cursor-not-allowed'
-                : 'text-blue-500 hover:text-blue-600'
+              ? 'text-gray-400 cursor-not-allowed'
+              : 'text-blue-500 hover:text-blue-600'
               }`}
           >
             <ChevronLeft size={20} />
@@ -101,8 +118,8 @@ const WelcomeGuide: React.FC = () => {
             onClick={handleNext}
             disabled={step === steps.length - 1}
             className={`flex items-center transition-colors ${step === steps.length - 1
-                ? 'text-gray-400 cursor-not-allowed'
-                : 'text-blue-500 hover:text-blue-600'
+              ? 'text-gray-400 cursor-not-allowed'
+              : 'text-blue-500 hover:text-blue-600'
               }`}
           >
             <span className="mr-1">Próximo</span>
