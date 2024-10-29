@@ -5,6 +5,7 @@ import { Menu, Search, Minus, Plus, Play, Pause, Maximize, Minimize, X } from "l
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import dynamic from "next/dynamic";
+import WelcomeGuide from "@/components/WelcomeCifra";
 
 const PDFRenderer = dynamic(() => import('@/components/PDFRenderer'), { ssr: false });
 
@@ -203,10 +204,7 @@ export default function CifraReader() {
                 <PDFRenderer url={selectedSong.url} />
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center h-full">
-                <h1 className="text-3xl font-bold mb-4 text-gray-500">Bem-vindo ao Leitor de Cifras</h1>
-                <p className="pb-16 text-xl text-gray-500">Selecione uma cifra para começar</p>
-              </div>
+              <WelcomeGuide />
             )}
           </div>
         </div>
