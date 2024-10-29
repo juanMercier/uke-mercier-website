@@ -85,7 +85,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 md:pl-8 lg:pl-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Conhece o professor: Carlos Mercier</h2>
-              <p className="text-secondary mb-4 sm:mb-6 text-lg ">Carlos Mercier é um apaixonado professor de ukulele com mais de 5 anos de experiência. O seu estilo de ensino único concentra-se em tornar a aprendizem divertida, acessível e livre de stress para alunos de todos os níveis e idades.</p>
+              <p className="text-secondary mb-4 sm:mb-6 text-lg ">Carlos Mercier é um apaixonado professor de ukulele com vários anos de experiência. O seu estilo de ensino único concentra-se em tornar a aprendizem divertida, acessível e livre de stress para alunos de todos os níveis e idades.</p>
               <AnimatedButton backgroundColor="white" textColor="tertiary" text="Saiba mais" link='/sobre' />
             </div>
           </div>
