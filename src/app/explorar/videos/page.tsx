@@ -1,99 +1,10 @@
 "use client";
 
 import UpperSection from '@/components/UpperSection';
+import VideoEmbed from '@/components/VideoEmbed';
+import { videoData } from '@/data/videoData';
+import { Difficulty } from '@/models/Difficulty';
 import { useState } from 'react'
-
-enum Difficulty {
-  PRINCIPIANTE = 'Principiante',
-  INTERMEDIO = 'Intermédio',
-  AVANCADO = 'Avançado',
-}
-
-const videoData = [
-  {
-    id: 1,
-    title: "Moon River Fingerstyle",
-    youtubeId: "ZoDYr5dIY9s",
-    difficulty: Difficulty.AVANCADO,
-  },
-  {
-    id: 2,
-    title: "Don't Stop me now",
-    difficulty: Difficulty.AVANCADO,
-    youtubeId: "Hq9dvYrbCdU"
-  },
-  {
-    id: 3,
-    title: "Ukulele Estudo nº1",
-    difficulty: Difficulty.PRINCIPIANTE,
-    youtubeId: "84rvT6xuQAQ"
-  },
-  {
-    id: 4,
-    title: "Ukulele Estudo nº2 - Meditação",
-    difficulty: Difficulty.INTERMEDIO,
-    youtubeId: "SW_Dsb4P7wg"
-  },
-  {
-    id: 5,
-    title: "Exercício Minhoca",
-    difficulty: Difficulty.PRINCIPIANTE,
-    youtubeId: "AP9pTXnVrWI"
-  },
-
-  {
-    id: 6,
-    title: "Jingle Bells 80bpm",
-    difficulty: Difficulty.PRINCIPIANTE,
-    youtubeId: "aIQZ11mHQoo"
-  },
-
-  {
-    id: 7,
-    title: "Hino da Alegria 80bpm",
-    difficulty: Difficulty.PRINCIPIANTE,
-    youtubeId: "6oc73zwG1cM"
-  },
-  {
-    id: 8,
-    title: "Imagine Primeira Parte",
-    difficulty: Difficulty.PRINCIPIANTE,
-    youtubeId: "HaZU5EglMJE"
-  },
-  {
-    id: 9,
-    title: "When the saints go marching in",
-    difficulty: Difficulty.INTERMEDIO,
-    youtubeId: "po7WB8bzM8g"
-  },
-  {
-    id: 10,
-    title: "Minueto em Sol Christian Petzold",
-    difficulty: Difficulty.AVANCADO,
-    youtubeId: "UE5QRZjOcuE"
-  },
-
-  {
-    id: 11,
-    title: "Valsa em Do - Ferdinando Carulli",
-    difficulty: Difficulty.INTERMEDIO,
-    youtubeId: "6psl8X-7f3g"
-  },
-
-
-]
-
-const VideoEmbed = ({ youtubeId, title }: { youtubeId: string, title: string }) => (
-  <div className="aspect-w-16 aspect-h-9 w-full">
-    <iframe
-      src={`https://www.youtube.com/embed/${youtubeId}`}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title={title}
-      className="w-full h-80 sm:h-[435px] rounded-lg shadow-md"
-    ></iframe>
-  </div>
-)
 
 export default function VideosPage() {
   const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
@@ -109,7 +20,7 @@ export default function VideosPage() {
             <div className="lg:col-span-2">
               <h2 className="text-2xl font-bold mb-4">{selectedVideo.title}</h2>
               <div className="w-full max-w-4xl mx-auto">
-                <VideoEmbed youtubeId={selectedVideo.youtubeId} title={selectedVideo.title} />
+                <VideoEmbed youtubeId={selectedVideo.youtubeId} title={selectedVideo.title} isHome={false}/>
               </div>
             </div>
             <div>
