@@ -174,12 +174,12 @@ export default function CifraReader() {
                 <span className="sr-only">Toggle sidebar</span>
               </button>
               <div className="flex items-center space-x-4">
-                <button onClick={() => setScrollSpeed(Math.max(0, scrollSpeed - 0.5))} className="p-2 rounded hover:bg-gray-100">
+                <button onClick={() => setScrollSpeed(Math.max(0, scrollSpeed - 0.2))} className="p-2 rounded hover:bg-gray-100">
                   <Minus size={20} />
                   <span className="sr-only">Decrease scroll speed</span>
                 </button>
                 <span className="font-bold">{scrollSpeed.toFixed(1)}</span>
-                <button onClick={() => setScrollSpeed(scrollSpeed + 0.5)} className="p-2 rounded hover:bg-gray-100">
+                <button onClick={() => setScrollSpeed(scrollSpeed + 0.2)} className="p-2 rounded hover:bg-gray-100">
                   <Plus size={20} />
                   <span className="sr-only">Increase scroll speed</span>
                 </button>

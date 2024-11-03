@@ -10,7 +10,7 @@ const ukuleleHistory = {
   meaning: {
     title: "O Significado de Ukulele",
     content: [
-      'Existem várias teorias sobre o significado de Ukulele e a mais conhecida é "Pulga Saltitante" e isto porque Uku significa "pulga" e lele significa "saltitante" no idioma Havaino. Este nome deve ter surgido por causa do movimento rápido das mãos de quem tocava o instrumento.',
+      'Existem várias teorias sobre o significado de Ukulele e a mais conhecida é "Pulga Saltitante" e isto porque Uku significa "pulga" e lele significa "saltitante" no idioma Havaiano. Este nome deve ter surgido por causa do movimento rápido das mãos de quem tocava o instrumento.',
       `Outra interpretação possível é "Presente que veio de longe" e isto porque Uku também significa "presente" e lele "vir". Quando o Rei David Kal'kaua conheceu este instrumento ficou apaixonado por ele e mandou construir um para oferecer à sua irmã Lili'uokalani. Assim este significado refere-se à prenda que a rainha Lili'uokalani recebeu do seu irmão. O Rei David Kal'kaua foi um dos que estimulou que este instrumento musical fizesse parte da dança Hula, tradicional na sua terra.`,
     ]
   },
