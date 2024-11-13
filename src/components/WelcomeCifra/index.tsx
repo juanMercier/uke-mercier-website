@@ -31,6 +31,10 @@ const WelcomeGuide: React.FC = () => {
       arrow: "fullScreen"
     },
     {
+      title: "Deita o ecrã",
+      content: "Se estás no telemóvel, sugerimos que o deites para ter uma melhor vizualização."
+    },
+    {
       title: "Começa a Tocar!",
       content: "Após escolher uma música e ajustar a velocidade, estás pronto para começar. Aproveita a tua sessão musical!"
     }
@@ -54,11 +58,11 @@ const WelcomeGuide: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[400px]">
+    <div className="flex items-center justify-center min-h-[300px] sm:min-h-[200px] lg:min-h-[400px]">
 
       {/* Menu Arrow */}
       {steps[step].arrow === 'menu' && !close && (
-        <div className="fixed top-48 lg:top-40  left-6 w-8 h-8 transform -rotate-45">
+        <div className="absolute top-48 lg:top-40  left-6 w-8 h-8 transform -rotate-45">
           <div className="absolute w-full h-full border-t-8 border-r-8 border-blue-500 animate-pulse" />
         </div>
       )}
@@ -66,10 +70,10 @@ const WelcomeGuide: React.FC = () => {
       {/* Controls Arrow */}
       {steps[step].arrow === 'controls' && !close && (
         <>
-          <div className="fixed top-48 lg:top-40 right-56 w-8 h-8 transform rotate-45">
+          <div className="absolute top-48 lg:top-40 right-56 w-8 h-8 transform rotate-45">
             <div className="absolute w-full h-full border-t-8 border-l-8 border-blue-500 animate-pulse" />
           </div>
-          <div className="fixed top-48 lg:top-40 right-32 w-8 h-8 transform rotate-45">
+          <div className="absolute top-48 lg:top-40 right-32 w-8 h-8 transform rotate-45">
             <div className="absolute w-full h-full border-t-8 border-l-8 border-blue-500 animate-pulse" />
           </div>
         </>
@@ -77,14 +81,14 @@ const WelcomeGuide: React.FC = () => {
 
       {/* playPause Arrow */}
       {steps[step].arrow === 'playPause' && !close && (
-        <div className="fixed top-48 lg:top-40 right-20 w-8 h-8 transform rotate-45">
+        <div className="absolute top-48 lg:top-40 right-20 w-8 h-8 transform rotate-45">
           <div className="absolute w-full h-full border-t-8 border-l-8 border-blue-500 animate-pulse" />
         </div>
       )}
 
       {/* fullScreen Arrow */}
       {steps[step].arrow === 'fullScreen' && !close && (
-        <div className="fixed top-48 lg:top-40 right-4 w-8 h-8 transform rotate-45">
+        <div className="absolute top-48 lg:top-40 right-4 w-8 h-8 transform rotate-45">
           <div className="absolute w-full h-full border-t-8 border-l-8 border-blue-500 animate-pulse" />
         </div>
       )}
@@ -93,11 +97,11 @@ const WelcomeGuide: React.FC = () => {
       {/* Guide Card */}
       {!close &&
         <div className='flex flex-col items-center justify-center'>
-          <div className="md:hidden flex flex-row w-12 h-12">
+          {/* <div className="md:hidden flex flex-row w-12 h-12">
             <Undo />
             <Smartphone />
           </div>
-          <span className='md:hidden pb-4'>Deite o telemóvel para uma melhor vizualização</span>
+          <span className='md:hidden pb-4'>Deite o telemóvel para uma melhor vizualização</span> */}
           <div className="relative bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto z-10">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-2xl font-bold text-gray-800">{steps[step].title}</h2>
@@ -140,7 +144,7 @@ const WelcomeGuide: React.FC = () => {
         </div>
       }
       {close &&
-        <button className='fixed flex flex-row items-center justify-center rounded-xl top-48 lg:top-40 right-4 w-24 h-8 bg-tertiary text-white py-6 px-8 gap-2' onClick={() => setClose(false)}>
+        <button className='absolute flex flex-row items-center justify-center rounded-xl top-48 lg:top-40 right-4 w-24 h-8 bg-tertiary text-white py-6 px-8 gap-2' onClick={() => setClose(false)}>
           <div>
             Tutorial
           </div>
