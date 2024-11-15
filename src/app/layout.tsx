@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Wrapper from "./Wrapper";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,6 +18,15 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "UkeMercier - Aulas de Ukulele Lisboa",
   description: "UkeMercier - Aulas de Ukulele Lisboa",
+  icons: {
+    icon: [
+      { rel: "icon", type: "image/png", sizes: "96x96", url: "/favicon-96x96.png" },
+      { rel: "icon", type: "image/svg+xml", url: "/favicon.svg" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -30,9 +39,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Wrapper>
-        {children}
-        </Wrapper>
+        <Wrapper>{children}</Wrapper>
         <Analytics />
       </body>
     </html>
