@@ -97,7 +97,7 @@ export default function Contactos() {
             <h2 className="text-4xl font-bold mb-6 text-center">Localização</h2>
             <div className="bg-primary p-4 rounded-lg h-96 flex items-center justify-center">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.5115468391823!2d-9.145204499999998!3d38.72902200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19339e043d79b3%3A0x210a53b86930acbc!2sR.%20Andrade%20Corvo%209%2C%201050-007%20Lisboa%2C%20Portugal!5e0!3m2!1spt-PT!2spe!4v1727890217750!5m2!1spt-PT!2spe&zoom=30"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.695790165251!2d-9.144885!3d38.724792799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19339d6838ce63%3A0xda9a818285b478c2!2sRua%20da%20Sociedade%20Farmac%C3%AAutica%2012%2C%201150-341%20Lisboa%2C%20Portugal!5e0!3m2!1spt-PT!2spe!4v1733252479211!5m2!1spt-PT!2spe&zoom=30"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -120,6 +120,8 @@ export default function Contactos() {
     </div>
   )
 }
+
+
 
 
 

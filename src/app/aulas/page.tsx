@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { User, Users, Clock, X, CheckCircle } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import UpperSection from '@/components/UpperSection'
 import 'react-phone-input-2/lib/style.css'
 import { useForm, ValidationError } from '@formspree/react'
@@ -32,17 +34,23 @@ const classTypes = [
   },
 ]
 
-const weekDays = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex']
+const weekDays = ['Quarta-feira', 'Quinta-feira', 'Sexta-feira']
 
 
 
 const classSchedule = [
-  { day: 'Qua', time: '12:45 - 13:45', type: ClassType.GROUP, difficulty: Difficulty.AVANCADO },
-  { day: 'Qua', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.PRINCIPANTE },
-  { day: 'Qui', time: '12:45 - 13:45', type: ClassType.GROUP, difficulty: Difficulty.INTERMEDIO },
-  { day: 'Qui', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.AVANCADO },
-  { day: 'Sex', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.PRINCIPANTE }
+  { day: 'Quarta-feira', time: '12:45 - 13:45', type: ClassType.GROUP, difficulty: Difficulty.AVANCADO },
+  { day: 'Quarta-feira', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.PRINCIPANTE },
+  { day: 'Quinta-feira', time: '12:45 - 13:45', type: ClassType.GROUP, difficulty: Difficulty.INTERMEDIO },
+  { day: 'Quinta-feira', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.AVANCADO },
+  { day: 'Sexta-feira', time: '18:00 - 19:00', type: ClassType.GROUP, difficulty: Difficulty.PRINCIPANTE }
 ]
+
+const difficultyColors = {
+  [Difficulty.PRINCIPANTE]: 'bg-green-100 text-green-800',
+  [Difficulty.INTERMEDIO]: 'bg-yellow-100 text-yellow-800',
+  [Difficulty.AVANCADO]: 'bg-red-100 text-red-800',
+}
 
 export default function ClassInformation() {
   const [selectedDay, setSelectedDay] = useState(weekDays[2])
@@ -113,46 +121,42 @@ export default function ClassInformation() {
               ))}
             </div>
           </div>
+          
+          <Card className="w-full">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-center">Calendário Semanal</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {weekDays.map((day) => (
+                  <div key={day} className="space-y-4">
+                    <h3 className="text-xl font-semibold text-center">{day}</h3>
+                    {classSchedule
+                      .filter((schedule) => schedule.day === day)
+                      .map((schedule, index) => (
+                        <Card key={index} className="bg-primary-foreground rounded-xl">
+                          <CardContent className="p-4">
+                            <div className="font-medium text-lg">{schedule.time}</div>
+                            <div className="flex items-center justify-between mt-2">
+                              <div className="flex items-center">
+                                <Users className="w-5 h-5 mr-2" />
+                                <span className="text-sm">{schedule.type}</span>
+                              </div>
+                              <Badge className={`text-sm ${difficultyColors[schedule.difficulty]}`}>
+                                {schedule.difficulty}
+                              </Badge>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
 
-          <div className="bg-primary-foreground rounded-xl p-6 shadow-lg">
-            <h2 className="text-3xl font-bold text-center mb-8 text-secondary">Calendário Semanal</h2>
-            <div className="flex justify-center space-x-2 mb-8">
-              {weekDays.map((day) => (
-                <button
-                  key={day}
-                  onClick={() => setSelectedDay(day)}
-                  className={`w-10 h-10 rounded-full font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary focus:ring-tertiary ${selectedDay === day
-                    ? 'bg-tertiary text-primary'
-                    : 'bg-secondary text-primary hover:bg-secondary-hover'
-                    }`}
-                >
-                  {day}
-                </button>
-              ))}
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-secondary border-opacity-20">
-                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase tracking-wider">Horário</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase tracking-wider">Tipo de Aula</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase tracking-wider">Nível</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-secondary divide-opacity-20">
-                  {classSchedule
-                    .filter((schedule) => schedule.day === selectedDay)
-                    .map((schedule, index) => (
-                      <tr key={index}>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary">{schedule.time}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary">{schedule.type}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary">{schedule.difficulty}</td>
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+
+
         </div>
 
         {isModalOpen && (
