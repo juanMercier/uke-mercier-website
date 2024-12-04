@@ -22,7 +22,7 @@ const ukuleleTypes = [
     },
     {
         type: "Barítono",
-        description: "O ukulele barítono é o maior de todos os tipos, medindo acima de 76 cm e mais de 19 trastes. É afinado da mesma forma que as quatro cordas mais graves do violão, o que torna o som dos dois instrumentos bem parecidos. Devido ao seu tamanho, ele perde o som clássico de ukulele, mas é uma ótima opção se você quer um som rico e encorpado. É possível ter a mesma afinação que os outros ukuleles.",
+        description: "O ukulele barítono é o maior de todos os tipos, medindo acima de 76 cm e mais de 19 trastes. É afinado da mesma forma que as quatro cordas mais agudas da guitarra, o que torna o som dos dois instrumentos bem parecidos. Devido ao seu tamanho, ele perde o som clássico de ukulele, mas é uma ótima opção se você quer um som rico e encorpado. É possível ter a mesma afinação que os outros ukuleles com a corda G(Sol) grave. Portanto com a afinação linear.",
         imageSquare: "/ukulele/tipos/Barítono.jpg",
         imageVertical: "/ukulele/tipos/Todos Barítono.jpg"
     }
