@@ -12,7 +12,7 @@ export default function FreeMonth() {
             Primeira Aula Grátis!
             </h2>
             <p className="text-xl mb-6">
-              Comece sua jornada musical sem custos. Inscreva-se agora e aproveite um mês completo de aulas de grupo gratuitamente.
+              Comece sua jornada musical sem custos. Inscreva-se agora e aproveite sua primeira aula de grupo gratuitamente.
             </p>
             <AnimatedButton backgroundColor="white" textColor="tertiary" text='Começa agora' link='/aulas' />
           </div>
