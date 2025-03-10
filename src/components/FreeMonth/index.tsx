@@ -9,7 +9,7 @@ export default function FreeMonth() {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-8 md:mb-0 md:mr-8">
             <h2 className="text-4xl font-extrabold mb-4">
-              Primeiro Mês de Aulas Grátis!
+            Primeira Aula Grátis!
             </h2>
             <p className="text-xl mb-6">
               Comece sua jornada musical sem custos. Inscreva-se agora e aproveite um mês completo de aulas de grupo gratuitamente.
