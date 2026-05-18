@@ -1,6 +1,3 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import blogPosts from '@/data/blogPosts.json'
 import UpperSection from '@/components/UpperSection'
 import BlogList from '@/components/BlogList'
 

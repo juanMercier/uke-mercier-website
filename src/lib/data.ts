@@ -33,7 +33,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
   const { data, error } = await supabase
     .from('blog_posts')
     .select('*')
-    .order('id', { ascending: true })
+    .order('date', { ascending: false })
   if (error) throw error
   return data as BlogPost[]
 }
