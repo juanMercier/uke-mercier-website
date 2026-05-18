@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UkeMercier Website
 
-## Getting Started
+Website for **UkeMercier** — ukulele lessons and community events in Lisbon, Portugal. Built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. Deployed on Vercel.
 
-First, run the development server:
+## Install & Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy the environment variables file and fill in the Firebase credentials:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # http://localhost:3000
+```
 
-## Learn More
+## Build & Deploy
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build    # production build
+npm run start    # run the production build locally
+npm run lint     # ESLint check
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deployments to production are handled automatically by **Vercel** on push to `master`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To deploy manually via the Vercel CLI:
 
-## Deploy on Vercel
+```bash
+npx vercel --prod
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Required for the chord sheet reader (`/explorar/leitor-de-cifras`) — Firebase Storage:
+
+```
+NEXT_PUBLIC_API_KEY
+NEXT_PUBLIC_AUTH_DOMAIN
+NEXT_PUBLIC_PROJECT_ID
+NEXT_PUBLIC_STORAGE_BUCKET
+NEXT_PUBLIC_MESSAGING_SENDER_ID
+NEXT_PUBLIC_APP_ID
+```

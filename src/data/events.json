@@ -130,5 +130,17 @@
       "content": "<p>Já ouviram falar deste pequeno e fantástico instrumento musical?</p><p>Sabiam que é um dos instrumentos musicais mais vendidos no mundo inteiro e que tem a sua origem num instrumento português?</p><p>Venham conhecer a sua história, as suas caraterísticas, a sua versatilidade e aprender algumas noções básicas para tocar alguns temas musicais simples.</p><p><br></p><p>Para descobrir e aprender mais sobre o Ukulele inscrevam-se neste workshop gratuito no Clube PT</p><strong><br>PROGRAMA:</strong><ul style=\"list-style-type: disc; padding-left: 40px;\"><li>História do instrumento e os vários tipos de Ukuleles.</li><li>Demonstração da versatilidade do instrumento com temas diversos.</li><li>Afinação do Ukulele e tipos de afinadores.</li><li>Como segurar o Ukulele / Posição das mãos e dedos.</li><li>Noção de Cifra e de Tablatura.</li><li>Alguns Acordes e Ritmos básicos.</li><li>Aprendizagem de algumas canções e melodias simples.</li></ul><br><strong>Inscrições limitadas e até ao dia 15 de Janeiro ou até ao preenchimento das vagas.</strong>",
       "image": "/eventos/Workshop 25 Jan 2025.png",
       "past": true
+    },
+    {
+      "id": 12,
+      "title": "1° Encontro Nacional de Ukuleles",
+      "date": "02-05-2026",
+      "from": "18:00",
+      "to": "23:00",
+      "location": "Lisboa",
+      "description": "Um encontro para tocar, cantar, aprender, partilhar e criar novas amizades, reunindo grupos de ukulele de todo o país!",
+      "content": "<p>É com muita alegria que anunciamos a realização do 1º Encontro Nacional de Ukuleles em Portugal! 💛</p><br><p>No dia 2 de maio, em Lisboa, vários grupos e projetos vão reunir-se para celebrar este pequeno grande instrumento que tem vindo a conquistar cada vez mais pessoas 🎵✨</p><br><p>Este encontro marca um momento importante para a nossa comunidade de ukulele em Portugal, juntando diferentes iniciativas num espírito de partilha, amizade, colaboração e paixão pela música e claro, por este nosso divertido instrumento. 🙌</p><br><p>Fica o registo deste passo especial na construção de algo maior! 🎶</p><br><p>Que este seja apenas o primeiro de muitos encontros!</p>",
+      "image": "/eventos/EncontroNacionalLisboa2Maio.jpeg",
+      "past": true
     }
   ]

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
-import 'pdfjs-dist/build/pdf.worker.entry';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
@@ -32,6 +31,7 @@ export default function PDFRenderer({ url }: PDFRendererProps) {
                         const renderContext = {
                             canvasContext: context,
                             viewport: viewport,
+                            canvas: canvas,
                         };
 
                         await page.render(renderContext).promise;

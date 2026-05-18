@@ -1,34 +1,21 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import blogPosts from '@/data/blogPosts.json'
 import { ArrowLeft } from 'lucide-react'
+import { notFound } from 'next/navigation'
+import { getBlogPostById } from '@/lib/data'
 
-type Props = {
-  params: { id: string }
-}
+type Props = { params: Promise<{ id: string }> }
 
-export default function BlogPost({ params }: Props) {
-  const { id } = params;
+export default async function BlogPost({ params }: Props) {
+  const { id } = await params
+  const post = await getBlogPostById(Number(id))
 
-  const post = blogPosts.find((post: any) => post.id === Number(id))
-
-  if (!post) {
-    return (
-      <div className='pt-24 md:pt-0'>
-        <div className="container mx-auto px-4 mt-20 py-12">
-          <h1 className="text-3xl font-bold text-center">Post não encontrado</h1>
-        </div>
-      </div>
-    )
-  }
+  if (!post) notFound()
 
   return (
-    <div className='pt-24 md:pt:0'>
+    <div className="pt-24 md:pt-0">
       <div className="container mx-auto px-4">
-        <Link 
-          href="/blog" 
-          className="absolute top-28 lg:top-26 flex items-center text-tertiary hover:text-tertiary-dark text-xl transition-colors"
-        >
+        <Link href="/blog" className="absolute top-28 lg:top-26 flex items-center text-tertiary hover:text-tertiary-dark text-xl transition-colors">
           <ArrowLeft className="mr-2" size={20} />
           <span>Voltar ao Blog</span>
         </Link>
