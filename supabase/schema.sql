@@ -38,3 +38,8 @@ CREATE POLICY "public read blog_posts" ON blog_posts FOR SELECT USING (true);
 -- Storage buckets (run in Dashboard → Storage or via API)
 -- Create three public buckets: eventos, blog, cifras
 -- In Dashboard: Storage → New bucket → name, toggle Public ON
+
+-- Public bucket "Public" toggle only enables anonymous downloads by URL;
+-- listing objects (storage.list()) still needs an explicit RLS policy.
+CREATE POLICY "public read cifras list" ON storage.objects
+  FOR SELECT USING (bucket_id = 'cifras');

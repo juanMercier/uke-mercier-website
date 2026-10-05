@@ -1,6 +1,8 @@
 import UpperSection from '@/components/UpperSection'
 import BlogList from '@/components/BlogList'
 
+export const dynamic = 'force-dynamic'
+
 export default function Blog() {
     return (
         <div className='pt-24 md:pt-0'>

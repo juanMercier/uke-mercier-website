@@ -22,6 +22,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link href="/admin/blog" className="px-3 py-2 rounded-lg hover:bg-gray-800 text-sm transition-colors">
             Blog
           </Link>
+          <Link href="/admin/cifras" className="px-3 py-2 rounded-lg hover:bg-gray-800 text-sm transition-colors">
+            Cifras
+          </Link>
         </nav>
 
         <form action={logout}>

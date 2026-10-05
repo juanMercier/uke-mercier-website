@@ -1,4 +1,6 @@
 import EventsList from '@/components/EventsList'
+
+export const dynamic = 'force-dynamic'
 import SecondFooter from '@/components/SecondFooter'
 import UpperSection from '@/components/UpperSection'
 

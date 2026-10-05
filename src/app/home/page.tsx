@@ -1,6 +1,8 @@
+export const dynamic = 'force-dynamic'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Music, Book, Calendar } from 'lucide-react'
+import { Music, Book, Calendar } from 'lucide-react'
 import EventsList from '@/components/EventsList'
 import FreeMonth from '@/components/FreeMonth'
 import AnimatedButton from '@/components/AnimatedButton'

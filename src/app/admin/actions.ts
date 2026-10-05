@@ -47,8 +47,9 @@ async function uploadImage(file: File, bucket: string): Promise<string> {
   const supabase = createServiceClient()
   const ext = file.name.split('.').pop()
   const filename = `${Date.now()}.${ext}`
+  const buffer = Buffer.from(await file.arrayBuffer())
 
-  const { error } = await supabase.storage.from(bucket).upload(filename, file)
+  const { error } = await supabase.storage.from(bucket).upload(filename, buffer, { contentType: file.type })
   if (error) throw new Error(error.message)
 
   const { data } = supabase.storage.from(bucket).getPublicUrl(filename)
@@ -189,4 +190,33 @@ export async function deleteBlogPost(id: number): Promise<void> {
   revalidatePath('/')
   revalidatePath('/blog')
   redirect('/admin/blog')
+}
+
+// ─── Cifras ────────────────────────────────────────────────────────────────
+
+export async function uploadCifra(formData: FormData): Promise<{ error: string } | void> {
+  const supabase = createServiceClient()
+
+  const file = formData.get('file') as File
+  if (!file || file.size === 0) return { error: 'Selecione um ficheiro PDF.' }
+  if (!file.name.toLowerCase().endsWith('.pdf')) return { error: 'O ficheiro tem de ser um PDF.' }
+
+  const buffer = Buffer.from(await file.arrayBuffer())
+  const { error } = await supabase.storage.from('cifras').upload(file.name, buffer, {
+    contentType: 'application/pdf',
+    upsert: true,
+  })
+  if (error) return { error: error.message }
+
+  revalidatePath('/admin/cifras')
+  revalidatePath('/explorar/leitor-de-cifras')
+  redirect('/admin/cifras')
+}
+
+export async function deleteCifra(filename: string): Promise<void> {
+  const supabase = createServiceClient()
+  await supabase.storage.from('cifras').remove([filename])
+  revalidatePath('/admin/cifras')
+  revalidatePath('/explorar/leitor-de-cifras')
+  redirect('/admin/cifras')
 }

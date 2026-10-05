@@ -4,11 +4,7 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
 export function createClient() {
-  return _createClient(supabaseUrl, supabaseAnonKey, {
-    global: {
-      fetch: (url, options) => fetch(url, { ...options, cache: 'no-store' }),
-    },
-  })
+  return _createClient(supabaseUrl, supabaseAnonKey)
 }
 
 export function createServiceClient() {

@@ -1,5 +1,5 @@
 import { createClient } from './supabase'
-import type { Event, BlogPost } from './types'
+import type { Event, BlogPost, Cifra } from './types'
 
 type DbEvent = Omit<Event, 'from' | 'to'> & { from_time: string; to_time: string }
 
@@ -47,4 +47,24 @@ export async function getBlogPostById(id: number): Promise<BlogPost | null> {
     .single()
   if (error) return null
   return data as BlogPost
+}
+
+function cifraDisplayName(filename: string): string {
+  return filename.replace(/^\d+\s*/, '').split('.').slice(0, -1).join('.')
+}
+
+export async function getCifras(): Promise<Cifra[]> {
+  const supabase = createClient()
+  const { data, error } = await supabase.storage.from('cifras').list()
+  if (error) throw error
+
+  const cifras = (data ?? [])
+    .filter((f) => f.name.toLowerCase().endsWith('.pdf'))
+    .map((f) => ({
+      filename: f.name,
+      name: cifraDisplayName(f.name),
+      url: supabase.storage.from('cifras').getPublicUrl(f.name).data.publicUrl,
+    }))
+
+  return cifras.sort((a, b) => a.name.localeCompare(b.name))
 }

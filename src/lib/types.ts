@@ -11,6 +11,12 @@ export type Event = {
   past: boolean
 }
 
+export type Cifra = {
+  filename: string   // raw storage object name, e.g. "12 Parabéns a Você.pdf"
+  name: string        // display name with leading number prefix stripped
+  url: string
+}
+
 export type BlogPost = {
   id: number
   title: string
