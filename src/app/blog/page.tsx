@@ -1,8 +1,7 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import blogPosts from '@/data/blogPosts.json'
 import UpperSection from '@/components/UpperSection'
 import BlogList from '@/components/BlogList'
+
+export const dynamic = 'force-dynamic'
 
 export default function Blog() {
     return (
